@@ -17,21 +17,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="L34-sQ-fUi" appends="YES" id="tvB-bp-i92"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="screenTapped" destination="L34-sQ-fUi" id="OSE-Sh-Gm8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="L34-sQ-fUi">
-                    <connections>
-                        <action selector="screenTapped:" destination="LVB-YS-i5n" id="X2g-00-M1C"/>
-                        <outlet property="delegate" destination="LVB-YS-i5n" id="SQU-kY-4n1"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

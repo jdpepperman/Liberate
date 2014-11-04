@@ -9,37 +9,45 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-        
-        self.addChild(myLabel)
-    }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
-    }
+	
+	var background = SKSpriteNode()
+	var hero = SKSpriteNode()
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
+	
+	required init(coder aDecoder: NSCoder)
+	{
+		fatalError("NSCoder not supported.")
+	}
+	
+	override init(size: CGSize)
+	{
+		super.init(size: size)
+		
+		anchorPoint = CGPoint(x: 0, y: 1.0)
+		loadBackground()
+		loadHero()
+	}
+	
+	///Adds the background image, places, and sizes it.
+	///Should be called once while setting up the scene.
+	func loadBackground()
+	{
+		background = SKSpriteNode(imageNamed: "caveWall")
+		background.position = CGPoint(x: 0, y: 0)
+		background.anchorPoint = CGPoint(x: 0, y: 1.0)
+		background.size = size
+		addChild(background)
+	}
+	
+	///Adds the hero to the screen.
+	func loadHero()
+	{
+		hero = SKSpriteNode(imageNamed: "hero")
+		hero.position = CGPoint(x:30, y: -280)
+		//hero.anchorPoint = CGPoint(x: 0, y: 0)
+		addChild(hero)
+	}
 }
