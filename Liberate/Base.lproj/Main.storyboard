@@ -17,9 +17,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uzI-lZ-JEH" appends="YES" id="7Av-Zg-hLB"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uzI-lZ-JEH">
+                    <connections>
+                        <action selector="didTap:" destination="LVB-YS-i5n" id="r3z-iP-0eH"/>
+                        <outlet property="delegate" destination="LVB-YS-i5n" id="9mg-fC-Dol"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

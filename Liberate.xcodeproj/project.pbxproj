@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		426117081A09AFCA0098B840 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 426117071A09AFCA0098B840 /* Images */; };
+		4261170E1A09B0970098B840 /* caveWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170A1A09B0970098B840 /* caveWall.png */; };
+		4261170F1A09B0970098B840 /* caveWallPixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170B1A09B0970098B840 /* caveWallPixel.png */; };
+		426117101A09B0970098B840 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170C1A09B0970098B840 /* hero.png */; };
+		426117111A09B0970098B840 /* hero2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170D1A09B0970098B840 /* hero2.png */; };
 		42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2119FFF53C00C69F81 /* AppDelegate.swift */; };
 		42F59A2619FFF53C00C69F81 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2519FFF53C00C69F81 /* GameScene.swift */; };
 		42F59A2819FFF53C00C69F81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2719FFF53C00C69F81 /* GameViewController.swift */; };
@@ -28,7 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		426117071A09AFCA0098B840 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = "<group>"; };
+		4261170A1A09B0970098B840 /* caveWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWall.png; path = Resources/Images/caveWall.png; sourceTree = "<group>"; };
+		4261170B1A09B0970098B840 /* caveWallPixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWallPixel.png; path = Resources/Images/caveWallPixel.png; sourceTree = "<group>"; };
+		4261170C1A09B0970098B840 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hero.png; path = Resources/Images/hero.png; sourceTree = "<group>"; };
+		4261170D1A09B0970098B840 /* hero2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hero2.png; path = Resources/Images/hero2.png; sourceTree = "<group>"; };
 		42F59A1C19FFF53C00C69F81 /* Liberate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liberate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F59A2019FFF53C00C69F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F59A2119FFF53C00C69F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		426117091A09B07E0098B840 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4261170A1A09B0970098B840 /* caveWall.png */,
+				4261170B1A09B0970098B840 /* caveWallPixel.png */,
+				4261170C1A09B0970098B840 /* hero.png */,
+				4261170D1A09B0970098B840 /* hero2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		42F59A1319FFF53C00C69F81 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +112,7 @@
 		42F59A1F19FFF53C00C69F81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				426117071A09AFCA0098B840 /* Images */,
+				426117091A09B07E0098B840 /* Images */,
 				42F59A2019FFF53C00C69F81 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -198,10 +215,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4261170F1A09B0970098B840 /* caveWallPixel.png in Resources */,
 				42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */,
 				42F59A2D19FFF53C00C69F81 /* Images.xcassets in Resources */,
-				426117081A09AFCA0098B840 /* Images in Resources */,
+				4261170E1A09B0970098B840 /* caveWall.png in Resources */,
+				426117111A09B0970098B840 /* hero2.png in Resources */,
 				42F59A2B19FFF53C00C69F81 /* Main.storyboard in Resources */,
+				426117101A09B0970098B840 /* hero.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

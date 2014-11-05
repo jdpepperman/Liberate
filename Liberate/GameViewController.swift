@@ -28,4 +28,8 @@ class GameViewController: UIViewController{
         return true
     }
 	
+	@IBAction func didTap(sender: UITapGestureRecognizer) {
+		println("Tap Recieved")
+		
+	}
 }

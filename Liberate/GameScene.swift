@@ -39,15 +39,16 @@ class GameScene: SKScene {
 		background.position = CGPoint(x: 0, y: 0)
 		background.anchorPoint = CGPoint(x: 0, y: 1.0)
 		background.size = size
+		
 		addChild(background)
 	}
 	
 	///Adds the hero to the screen.
 	func loadHero()
 	{
-		hero = SKSpriteNode(imageNamed: "hero")
+		hero = SKSpriteNode(imageNamed: "hero2")
 		hero.position = CGPoint(x:30, y: -280)
-		//hero.anchorPoint = CGPoint(x: 0, y: 0)
+		
 		addChild(hero)
 	}
 }
