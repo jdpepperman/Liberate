@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4261170E1A09B0970098B840 /* caveWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170A1A09B0970098B840 /* caveWall.png */; };
-		4261170F1A09B0970098B840 /* caveWallPixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170B1A09B0970098B840 /* caveWallPixel.png */; };
 		426117111A09B0970098B840 /* heroStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170D1A09B0970098B840 /* heroStanding1.png */; };
 		426117131A09E8A20098B840 /* heroStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 426117121A09E8A20098B840 /* heroStanding2.png */; };
 		42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2119FFF53C00C69F81 /* AppDelegate.swift */; };
@@ -32,7 +31,6 @@
 
 /* Begin PBXFileReference section */
 		4261170A1A09B0970098B840 /* caveWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWall.png; path = Resources/Images/caveWall.png; sourceTree = "<group>"; };
-		4261170B1A09B0970098B840 /* caveWallPixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWallPixel.png; path = Resources/Images/caveWallPixel.png; sourceTree = "<group>"; };
 		4261170D1A09B0970098B840 /* heroStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroStanding1.png; path = Resources/Images/heroStanding1.png; sourceTree = "<group>"; };
 		426117121A09E8A20098B840 /* heroStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroStanding2.png; path = Resources/Images/heroStanding2.png; sourceTree = "<group>"; };
 		42F59A1C19FFF53C00C69F81 /* Liberate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liberate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +69,6 @@
 			children = (
 				426117121A09E8A20098B840 /* heroStanding2.png */,
 				4261170A1A09B0970098B840 /* caveWall.png */,
-				4261170B1A09B0970098B840 /* caveWallPixel.png */,
 				4261170D1A09B0970098B840 /* heroStanding1.png */,
 			);
 			name = Images;
@@ -215,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4261170F1A09B0970098B840 /* caveWallPixel.png in Resources */,
 				42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */,
 				426117131A09E8A20098B840 /* heroStanding2.png in Resources */,
 				42F59A2D19FFF53C00C69F81 /* Images.xcassets in Resources */,

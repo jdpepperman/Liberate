@@ -29,6 +29,7 @@ class GameScene: SKScene {
 		anchorPoint = CGPoint(x: 0, y: 1.0)
 		loadBackground()
 		loadHero()
+		heroStand()
 	}
 	
 	///Adds the background image, places, and sizes it.
@@ -50,5 +51,17 @@ class GameScene: SKScene {
 		hero.position = CGPoint(x:30, y: -280)
 		
 		addChild(hero)
+	}
+	
+	func heroStand()
+	{
+		let heroStandAnimation = SKAction.animateWithTextures([
+			SKTexture(imageNamed: "heroStanding1"),
+			SKTexture(imageNamed: "heroStanding2")
+			], timePerFrame: 0.5)
+		
+		let stand = SKAction.repeatActionForever(heroStandAnimation)
+		
+		hero.runAction(stand, withKey: "standing")
 	}
 }
