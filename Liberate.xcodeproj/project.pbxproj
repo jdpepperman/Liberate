@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		426116FB1A09AC1A0098B840 /* caveWallPixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 426116FA1A09AC1A0098B840 /* caveWallPixel.png */; };
-		426116FE1A09AC600098B840 /* caveWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 426116FC1A09AC600098B840 /* caveWall.png */; };
-		426116FF1A09AC600098B840 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 426116FD1A09AC600098B840 /* hero.png */; };
+		426117081A09AFCA0098B840 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 426117071A09AFCA0098B840 /* Images */; };
 		42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2119FFF53C00C69F81 /* AppDelegate.swift */; };
 		42F59A2619FFF53C00C69F81 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2519FFF53C00C69F81 /* GameScene.swift */; };
 		42F59A2819FFF53C00C69F81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2719FFF53C00C69F81 /* GameViewController.swift */; };
@@ -30,9 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		426116FA1A09AC1A0098B840 /* caveWallPixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWallPixel.png; path = Resources/Images/caveWallPixel.png; sourceTree = "<group>"; };
-		426116FC1A09AC600098B840 /* caveWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWall.png; path = Resources/Images/caveWall.png; sourceTree = "<group>"; };
-		426116FD1A09AC600098B840 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hero.png; path = Resources/Images/hero.png; sourceTree = "<group>"; };
+		426117071A09AFCA0098B840 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = "<group>"; };
 		42F59A1C19FFF53C00C69F81 /* Liberate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liberate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F59A2019FFF53C00C69F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F59A2119FFF53C00C69F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +95,7 @@
 		42F59A1F19FFF53C00C69F81 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				426116FC1A09AC600098B840 /* caveWall.png */,
-				426116FD1A09AC600098B840 /* hero.png */,
-				426116FA1A09AC1A0098B840 /* caveWallPixel.png */,
+				426117071A09AFCA0098B840 /* Images */,
 				42F59A2019FFF53C00C69F81 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -206,10 +200,8 @@
 			files = (
 				42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */,
 				42F59A2D19FFF53C00C69F81 /* Images.xcassets in Resources */,
-				426116FE1A09AC600098B840 /* caveWall.png in Resources */,
+				426117081A09AFCA0098B840 /* Images in Resources */,
 				42F59A2B19FFF53C00C69F81 /* Main.storyboard in Resources */,
-				426116FB1A09AC1A0098B840 /* caveWallPixel.png in Resources */,
-				426116FF1A09AC600098B840 /* hero.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
