@@ -11,6 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController{
 	var scene: GameScene!
+	var panPointReference: CGPoint?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +32,8 @@ class GameViewController: UIViewController{
 	@IBAction func didTap(sender: UITapGestureRecognizer) {
 		println("Tap Recieved")
 		
+	}
+	@IBAction func didPan(sender: UIPanGestureRecognizer) {
+		println("Pan Recieved")
 	}
 }

@@ -53,6 +53,7 @@ class GameScene: SKScene {
 		addChild(hero)
 	}
 	
+	///Animates the hero standing
 	func heroStand()
 	{
 		let heroStandAnimation = SKAction.animateWithTextures([
