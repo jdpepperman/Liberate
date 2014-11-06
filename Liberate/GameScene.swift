@@ -65,4 +65,16 @@ class GameScene: SKScene {
 		
 		hero.runAction(stand, withKey: "standing")
 	}
+	
+	func heroWalk()
+	{
+		let heroWalkAnimation = SKAction.animateWithTextures([
+		SKTexture(imageNamed: "heroWalking1"),
+		SKTexture(imageNamed: "heroWalking2")
+			], timePerFrame: 0.5)
+		
+		let walk = SKAction.repeatAction(heroWalkAnimation, count: 5)
+		
+		hero.runAction(walk, withKey: "walking")
+	}
 }
