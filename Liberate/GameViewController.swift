@@ -31,7 +31,7 @@ class GameViewController: UIViewController{
 	
 	@IBAction func didTap(sender: UITapGestureRecognizer) {
 		println("Tap Recieved")
-		heroWalk()
+		scene.heroWalk()
 	}
 	
 	/**

@@ -49,6 +49,7 @@ class GameScene: SKScene {
 	{
 		hero = SKSpriteNode(imageNamed: "hero2")
 		hero.position = CGPoint(x:30, y: -280)
+		hero.setScale(1.5)
 		
 		addChild(hero)
 	}
@@ -71,9 +72,9 @@ class GameScene: SKScene {
 		let heroWalkAnimation = SKAction.animateWithTextures([
 		SKTexture(imageNamed: "heroWalking1"),
 		SKTexture(imageNamed: "heroWalking2")
-			], timePerFrame: 0.5)
+			], timePerFrame: 0.1)
 		
-		let walk = SKAction.repeatAction(heroWalkAnimation, count: 5)
+		let walk = SKAction.repeatAction(heroWalkAnimation, count: 10)
 		
 		hero.runAction(walk, withKey: "walking")
 	}
