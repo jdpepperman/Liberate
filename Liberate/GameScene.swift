@@ -47,7 +47,7 @@ class GameScene: SKScene {
 	///Adds the hero to the screen.
 	func loadHero()
 	{
-		hero = SKSpriteNode(imageNamed: "hero2")
+		hero = SKSpriteNode(imageNamed: "heroStanding1")
 		hero.position = CGPoint(x:30, y: -280)
 		hero.setScale(1.5)
 		
