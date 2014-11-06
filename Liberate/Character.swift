@@ -11,20 +11,17 @@ import Foundation
 class Character
 {
 	var inventory: Array<Item?>
-	var name: String
 	var health: Int
 	
 	
 	init()
 	{
-		self.name = ""
 		self.inventory = []
-		self.health = 0
+		self.health = 100
 	}
 	
-	init(name: String, health: Int)
+	init(health: Int)
 	{
-		self.name = name
 		self.health = health
 		self.inventory = []
 	}

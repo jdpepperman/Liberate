@@ -12,6 +12,7 @@ import SpriteKit
 class GameViewController: UIViewController{
 	var scene: GameScene!
 	var panPointReference: CGPoint?
+	var hero: Hero!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class GameViewController: UIViewController{
 		scene = GameScene(size: skView.bounds.size)
 		scene.scaleMode = .AspectFill
 		
+		hero = scene.hero
+		
 		skView.presentScene(scene)
     }
 	
@@ -31,7 +34,7 @@ class GameViewController: UIViewController{
 	
 	@IBAction func didTap(sender: UITapGestureRecognizer) {
 		println("Tap Recieved")
-		scene.heroWalk()
+		hero.walk()
 	}
 	
 	/**

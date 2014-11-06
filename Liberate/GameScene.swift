@@ -11,7 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
 	
 	var background = SKSpriteNode()
-	var hero = SKSpriteNode()
+	var hero = Hero()
+	//var hero = SKSpriteNode()
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
@@ -29,7 +30,8 @@ class GameScene: SKScene {
 		anchorPoint = CGPoint(x: 0, y: 1.0)
 		loadBackground()
 		loadHero()
-		heroStand()
+		
+		hero.stand()
 	}
 	
 	///Adds the background image, places, and sizes it.
@@ -47,35 +49,14 @@ class GameScene: SKScene {
 	///Adds the hero to the screen.
 	func loadHero()
 	{
-		hero = SKSpriteNode(imageNamed: "heroStanding1")
-		hero.position = CGPoint(x:30, y: -280)
-		hero.setScale(1.5)
+//		hero = SKSpriteNode(imageNamed: "heroStanding1")
+//		hero.position = CGPoint(x:30, y: -280)
+//		hero.setScale(1.5)
 		
-		addChild(hero)
+		addChild(hero.sprite)
 	}
 	
-	///Animates the hero standing
-	func heroStand()
-	{
-		let heroStandAnimation = SKAction.animateWithTextures([
-			SKTexture(imageNamed: "heroStanding1"),
-			SKTexture(imageNamed: "heroStanding2")
-			], timePerFrame: 0.5)
-		
-		let stand = SKAction.repeatActionForever(heroStandAnimation)
-		
-		hero.runAction(stand, withKey: "standing")
-	}
 	
-	func heroWalk()
-	{
-		let heroWalkAnimation = SKAction.animateWithTextures([
-		SKTexture(imageNamed: "heroWalking1"),
-		SKTexture(imageNamed: "heroWalking2")
-			], timePerFrame: 0.1)
-		
-		let walk = SKAction.repeatAction(heroWalkAnimation, count: 10)
-		
-		hero.runAction(walk, withKey: "walking")
-	}
+	
+	
 }

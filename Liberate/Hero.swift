@@ -7,8 +7,51 @@
 //
 
 import Foundation
+import SpriteKit
 
 class Hero: Character
 {
+	var sprite = SKSpriteNode()
 	
+	///Creates a new hero with the hero image, sets his position, and his scale.
+	///Gives him a default health of 100 and an empty inventory.
+	override init()
+	{
+		super.init()
+		
+		sprite = SKSpriteNode(imageNamed: "heroStanding1")
+		sprite.position = CGPoint(x:30, y: -280)
+		sprite.setScale(1.5)
+	}
+	
+	func load()
+	{
+		
+	}
+	
+	///Animates the hero standing
+	func stand()
+	{
+		let heroStandAnimation = SKAction.animateWithTextures([
+			SKTexture(imageNamed: "heroStanding1"),
+			SKTexture(imageNamed: "heroStanding2")
+			], timePerFrame: 0.5)
+		
+		let stand = SKAction.repeatActionForever(heroStandAnimation)
+		
+		sprite.runAction(stand, withKey: "standing")
+	}
+	
+	///Animates the hero walking
+	func walk()
+	{
+		let heroWalkAnimation = SKAction.animateWithTextures([
+			SKTexture(imageNamed: "heroWalking1"),
+			SKTexture(imageNamed: "heroWalking2")
+			], timePerFrame: 0.1)
+		
+		let walk = SKAction.repeatAction(heroWalkAnimation, count: 10)
+		
+		sprite.runAction(walk, withKey: "walking")
+	}
 }
