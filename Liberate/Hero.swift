@@ -24,11 +24,6 @@ class Hero: Character
 		sprite.setScale(1.5)
 	}
 	
-	func load()
-	{
-		
-	}
-	
 	///Animates the hero standing
 	func stand()
 	{
@@ -53,5 +48,11 @@ class Hero: Character
 		let walk = SKAction.repeatAction(heroWalkAnimation, count: 10)
 		
 		sprite.runAction(walk, withKey: "walking")
+	}
+	
+	///Attacks an opponent with fists
+	func punch()
+	{
+		//move the sprite forward a little and make a whack animation on the enemy (?)
 	}
 }

@@ -11,18 +11,24 @@ import Foundation
 class Character
 {
 	var inventory: Array<Item?>
-	var health: Int
+	//var moveSet: Array<Move?>
+	var stats: [String : Int]
 	
 	
 	init()
 	{
 		self.inventory = []
-		self.health = 100
+		self.stats = [
+			"health" : 20,
+			"attack" : 5,
+			"defense": 5
+		]
 	}
 	
-	init(health: Int)
+	init(inventory: Array<Item?>, stats: [String : Int])
 	{
-		self.health = health
-		self.inventory = []
+		self.inventory = inventory
+		self.stats = stats
 	}
+
 }
