@@ -153,5 +153,10 @@ class GameScene: SKScene {
 	{
 		hero.stand()
 		thug.stand()
+
+		/*
+			TO-DO:	Make tapping the screen punch the enemy, taking away health until he is defeated.
+			Then move everything until a new enemy is at the same spot and repeat.
+		*/
 	}
 }
