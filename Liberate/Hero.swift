@@ -11,34 +11,24 @@ import SpriteKit
 
 class Hero: Character
 {
-	var sprite = SKSpriteNode()
-	
-	///Creates a new hero with the hero image, sets his position, and his scale.
-	///Gives him a default health of 100 and an empty inventory.
-	override init()
-	{
-		super.init()
+	/**
+		Creates a new hero with the hero image, sets his position, and his scale.
 		
-		sprite = SKSpriteNode(imageNamed: "heroStanding1")
-		sprite.position = CGPoint(x:30, y: -280)
+		:param: scene the scene the Hero belongs to
+	*/
+	init(scene: GameScene)
+	{
+		super.init(scene: scene, standing1: "heroStanding1", standing2: "heroStanding2")
+		
+		sprite = SKSpriteNode(imageNamed: standing1)
+		sprite.position = CGPoint(x:160, y: -176)
 		sprite.setScale(1.5)
 	}
 	
-	///Animates the hero standing
-	func stand()
-	{
-		let heroStandAnimation = SKAction.animateWithTextures([
-			SKTexture(imageNamed: "heroStanding1"),
-			SKTexture(imageNamed: "heroStanding2")
-			], timePerFrame: 0.5)
-		
-		let stand = SKAction.repeatActionForever(heroStandAnimation)
-		
-		sprite.runAction(stand, withKey: "standing")
-	}
-	
-	///Animates the hero walking
-	func walk()
+	/**
+		Animates the hero walking
+	*/
+	func run()
 	{
 		let heroWalkAnimation = SKAction.animateWithTextures([
 			SKTexture(imageNamed: "heroWalking1"),
@@ -50,7 +40,9 @@ class Hero: Character
 		sprite.runAction(walk, withKey: "walking")
 	}
 	
-	///Attacks an opponent with fists
+	/**
+		Attacks an opponent with fists
+	*/
 	func punch()
 	{
 		//move the sprite forward a little and make a whack animation on the enemy (?)

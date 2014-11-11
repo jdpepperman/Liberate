@@ -11,11 +11,14 @@ import SpriteKit
 class GameScene: SKScene {
 	
 	var background = SKSpriteNode()
-	var hero = Hero()
-	//var hero = SKSpriteNode()
+	var ground1 = SKSpriteNode()
+	var ground2 = SKSpriteNode()
+	var hero = Hero(self)
+	var thug = Thug(scene: self)
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+		
     }
 	
 	required init(coder aDecoder: NSCoder)
@@ -30,12 +33,15 @@ class GameScene: SKScene {
 		anchorPoint = CGPoint(x: 0, y: 1.0)
 		loadBackground()
 		loadHero()
+		loadThug()
 		
 		hero.stand()
+		thug.stand()
 	}
 	
-	///Adds the background image, places, and sizes it.
-	///Should be called once while setting up the scene.
+	/**
+		Adds the background image, places, and sizes it. Should be called once while setting up the scene.
+	*/
 	func loadBackground()
 	{
 		background = SKSpriteNode(imageNamed: "caveWall")
@@ -43,20 +49,33 @@ class GameScene: SKScene {
 		background.anchorPoint = CGPoint(x: 0, y: 1.0)
 		background.size = size
 		
+		ground1 = SKSpriteNode(imageNamed: "caveFloor")
+		ground1.position = CGPoint(x: 0, y: 0)
+		ground1.anchorPoint = CGPoint(x: 0, y: 1.0)
+		ground1.size = size
+		
+		ground2 = SKSpriteNode(imageNamed: "caveFloor")
+		ground2.position = CGPoint(x: 0, y: 0)
+		ground2.anchorPoint = CGPoint(x: 0, y: 1.0)
+		ground2.size = size
+		
 		addChild(background)
+		addChild(ground1)
 	}
 	
-	///Adds the hero to the screen.
+	/**
+		Adds the hero to the screen.
+	*/
 	func loadHero()
 	{
-//		hero = SKSpriteNode(imageNamed: "heroStanding1")
-//		hero.position = CGPoint(x:30, y: -280)
-//		hero.setScale(1.5)
-		
 		addChild(hero.sprite)
 	}
 	
-	
-	
-	
+	/**
+		Adds the thug to the screen.
+	*/
+	func loadThug()
+	{
+		addChild(thug.sprite)
+	}
 }

@@ -34,27 +34,7 @@ class GameViewController: UIViewController{
 	
 	@IBAction func didTap(sender: UITapGestureRecognizer) {
 		println("Tap Recieved")
-		hero.walk()
+		hero.run()
+		
 	}
-	
-	/**
-	Velocity:
-	up:		-y
-	down:	+y
-	left:	-x
-	right:	+x
-
-	@IBAction func didPan(sender: UIPanGestureRecognizer) {
-		println("Pan Recieved")
-		let currentPoint = sender.translationInView(self.view)
-		if let originalPoint = panPointReference
-		{
-			println(sender.velocityInView(self.view))
-		}
-		else if sender.state == .Began
-		{
-			panPointReference = currentPoint
-		}
-	}
-	*/
 }

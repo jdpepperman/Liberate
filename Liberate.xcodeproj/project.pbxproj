@@ -18,6 +18,8 @@
 		4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */; };
 		4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */; };
 		42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44B1A11376F00E31CE5 /* MoveList.swift */; };
+		42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C44D1A116C6300E31CE5 /* caveFloor.png */; };
+		42C1C4501A11796300E31CE5 /* Thug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44F1A11796300E31CE5 /* Thug.swift */; };
 		42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2119FFF53C00C69F81 /* AppDelegate.swift */; };
 		42F59A2619FFF53C00C69F81 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2519FFF53C00C69F81 /* GameScene.swift */; };
 		42F59A2819FFF53C00C69F81 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A2719FFF53C00C69F81 /* GameViewController.swift */; };
@@ -49,6 +51,8 @@
 		4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding1.png; path = Resources/Images/enemyRyanStanding1.png; sourceTree = "<group>"; };
 		4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding2.png; path = Resources/Images/enemyRyanStanding2.png; sourceTree = "<group>"; };
 		42C1C44B1A11376F00E31CE5 /* MoveList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveList.swift; sourceTree = "<group>"; };
+		42C1C44D1A116C6300E31CE5 /* caveFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveFloor.png; path = Resources/Images/caveFloor.png; sourceTree = "<group>"; };
+		42C1C44F1A11796300E31CE5 /* Thug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thug.swift; sourceTree = "<group>"; };
 		42F59A1C19FFF53C00C69F81 /* Liberate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liberate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F59A2019FFF53C00C69F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F59A2119FFF53C00C69F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		426117091A09B07E0098B840 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				42C1C44D1A116C6300E31CE5 /* caveFloor.png */,
 				4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */,
 				4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */,
 				428910971A0BEA6A00D7381B /* heroWalking1.png */,
@@ -121,6 +126,7 @@
 				428910911A0AB70700D7381B /* Character.swift */,
 				428910951A0BC4ED00D7381B /* Item.swift */,
 				428910931A0BC42300D7381B /* Hero.swift */,
+				42C1C44F1A11796300E31CE5 /* Thug.swift */,
 				42C1C44B1A11376F00E31CE5 /* MoveList.swift */,
 				42F59A2919FFF53C00C69F81 /* Main.storyboard */,
 				42F59A2C19FFF53C00C69F81 /* Images.xcassets */,
@@ -246,6 +252,7 @@
 				4261170E1A09B0970098B840 /* caveWall.png in Resources */,
 				426117111A09B0970098B840 /* heroStanding1.png in Resources */,
 				42F59A2B19FFF53C00C69F81 /* Main.storyboard in Resources */,
+				42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +275,7 @@
 				42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */,
 				42F59A2819FFF53C00C69F81 /* GameViewController.swift in Sources */,
 				42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */,
+				42C1C4501A11796300E31CE5 /* Thug.swift in Sources */,
 				428910961A0BC4ED00D7381B /* Item.swift in Sources */,
 				428910921A0AB70700D7381B /* Character.swift in Sources */,
 			);
