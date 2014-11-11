@@ -10,9 +10,9 @@ import SpriteKit
 
 class Thug: Character
 {
-	init(scene: GameScene)
+	init()
 	{
-		super.init(scene: scene, standing1: "enemyRyanStanding1", standing2: "enemyRyanStanding2")
+		super.init(standing1: "enemyRyanStanding1", standing2: "enemyRyanStanding2")
 		
 		sprite = SKSpriteNode(imageNamed: standing1)
 		sprite.position = CGPoint(x:300, y: -176)

@@ -13,8 +13,8 @@ class GameScene: SKScene {
 	var background = SKSpriteNode()
 	var ground1 = SKSpriteNode()
 	var ground2 = SKSpriteNode()
-	var hero = Hero(self)
-	var thug = Thug(scene: self)
+	var hero = Hero()
+	var thug = Thug()
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */

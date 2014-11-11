@@ -10,7 +10,6 @@ import SpriteKit
 
 class Character
 {
-	var scene: SKScene
 	var sprite: SKSpriteNode
 	var standing1: String
 	var standing2: String
@@ -27,10 +26,8 @@ class Character
 		:param: standing1 the string name of the file of the first standing animation for this character
 		:param: standing2 the string name of the file of the second standing animation for this character
 	*/
-	init(scene: GameScene, standing1: String, standing2: String)
+	init(standing1: String, standing2: String)
 	{
-		self.scene = scene
-		
 		sprite = SKSpriteNode()
 		self.standing1 = standing1
 		self.standing2 = standing2
@@ -52,10 +49,8 @@ class Character
 		:param: inventory the list of items this character has
 		:param: stats this characters stats
 	*/
-	init(scene: SKScene, standing1: String, standing2: String, inventory: Array<Item?>, stats: [String : Int])
+	init(standing1: String, standing2: String, inventory: Array<Item?>, stats: [String : Int])
 	{
-		self.scene = scene
-		
 		sprite = SKSpriteNode()
 		self.standing1 = standing1
 		self.standing2 = standing2

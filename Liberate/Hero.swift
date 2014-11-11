@@ -16,9 +16,9 @@ class Hero: Character
 		
 		:param: scene the scene the Hero belongs to
 	*/
-	init(scene: GameScene)
+	init()
 	{
-		super.init(scene: scene, standing1: "heroStanding1", standing2: "heroStanding2")
+		super.init(standing1: "heroStanding1", standing2: "heroStanding2")
 		
 		sprite = SKSpriteNode(imageNamed: standing1)
 		sprite.position = CGPoint(x:160, y: -176)
