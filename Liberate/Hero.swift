@@ -21,7 +21,7 @@ class Hero: Character
 		super.init(standing1: "heroStanding1", standing2: "heroStanding2")
 		
 		sprite = SKSpriteNode(imageNamed: standing1)
-		sprite.position = CGPoint(x:160, y: -176)
+		sprite.position = CGPoint(x: 160, y: -176)
 		sprite.setScale(1.5)
 	}
 	
@@ -46,5 +46,13 @@ class Hero: Character
 	func punch()
 	{
 		//move the sprite forward a little and make a whack animation on the enemy (?)
+	}
+	
+	/**
+		Loads the Hero in relation to the screen. Call this once after the sprite has been added to the scene.
+	*/
+	func load()
+	{
+		sprite.position = CGPoint(x: sprite.scene!.size.width / 3, y: -(sprite.scene!.size.height / 3)*2)
 	}
 }

@@ -69,6 +69,7 @@ class GameScene: SKScene {
 	func loadHero()
 	{
 		addChild(hero.sprite)
+		hero.load()
 	}
 	
 	/**
@@ -77,5 +78,6 @@ class GameScene: SKScene {
 	func loadThug()
 	{
 		addChild(thug.sprite)
+		thug.load()
 	}
 }

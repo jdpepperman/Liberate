@@ -29,6 +29,7 @@ class Character
 	init(standing1: String, standing2: String)
 	{
 		sprite = SKSpriteNode()
+		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
 		self.standing1 = standing1
 		self.standing2 = standing2
 		
@@ -73,6 +74,15 @@ class Character
 		
 		sprite.runAction(stand, withKey: "standing")
 	}
+	
+	/**
+		Gets the position of the character.
 
-
+		:return: the position of the character in its scene as a CGPoint
+	*/
+	func getPosition() -> CGPoint
+	{
+		var pos: CGPoint = sprite.position
+		return pos
+	}
 }
