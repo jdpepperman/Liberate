@@ -8,8 +8,8 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-	
+class GameScene: SKScene
+{
 	var background = SKSpriteNode()
 	
 	var groundPieces = [SKSpriteNode]()
@@ -21,7 +21,8 @@ class GameScene: SKScene {
 	var hero = Hero()
 	var thug = Thug()
    
-    override func update(currentTime: CFTimeInterval) {
+    override func update(currentTime: CFTimeInterval)
+	{
         /* Called before each frame is rendered */
 		checkGroundMovement()
     }
@@ -38,7 +39,8 @@ class GameScene: SKScene {
 		anchorPoint = CGPoint(x: 0, y: 1.0)
 	}
 	
-	override func didMoveToView(view: SKView) {
+	override func didMoveToView(view: SKView)
+	{
 		/* Setup your scene here */
 		loadGame()
 		
@@ -96,7 +98,6 @@ class GameScene: SKScene {
 			
 			self.addChild(groundSprite)
 		}
-
 	}
 	
 	/**
@@ -117,6 +118,9 @@ class GameScene: SKScene {
 		thug.load()
 	}
 	
+	/**
+		Moves the ground.
+	*/
 	func moveGround()
 	{
 		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: 2)
@@ -128,6 +132,9 @@ class GameScene: SKScene {
 		}
 	}
 	
+	/**
+		Checks to see if one of the ground images has gone off the screen. Should be called in update as this needs to be done continuously.
+	*/
 	func checkGroundMovement()
 	{
 		for var i = 0; i < groundPieces.count; i++

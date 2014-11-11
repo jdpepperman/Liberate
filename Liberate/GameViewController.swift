@@ -9,12 +9,14 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController{
+class GameViewController: UIViewController
+{
 	var scene: GameScene!
 	var panPointReference: CGPoint?
 	var hero: Hero!
 	
-    override func viewDidLoad() {
+    override func viewDidLoad()
+	{
         super.viewDidLoad()
 		
 		let skView = view as SKView
@@ -28,11 +30,13 @@ class GameViewController: UIViewController{
 		skView.presentScene(scene)
     }
 	
-    override func prefersStatusBarHidden() -> Bool {
+    override func prefersStatusBarHidden() -> Bool
+	{
         return true
     }
 	
-	@IBAction func didTap(sender: UITapGestureRecognizer) {
+	@IBAction func didTap(sender: UITapGestureRecognizer)
+	{
 		println("Tap Recieved")
 		hero.run()
 		scene.moveGround()

@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Joshua Pepperman. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
 
 class Hero: Character
