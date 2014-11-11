@@ -11,13 +11,19 @@ import SpriteKit
 class GameScene: SKScene {
 	
 	var background = SKSpriteNode()
+	
 	var groundPieces = [SKSpriteNode]()
+	let groundSpeed: CGFloat = 500
+	var moveGroundAction: SKAction!
+	var moveGroundForeverAction: SKAction!
+	let groundResetXCoord: CGFloat = 0
+	
 	var hero = Hero()
 	var thug = Thug()
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-		
+		checkGroundMovement()
     }
 	
 	required init(coder aDecoder: NSCoder)
@@ -109,6 +115,35 @@ class GameScene: SKScene {
 	{
 		addChild(thug.sprite)
 		thug.load()
+	}
+	
+	func moveGround()
+	{
+		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: 2)
+		//moveGroundForeverAction = SKAction.repeatActionForever(SKAction.sequence([moveGroundAction]))
+		
+		for sprite in groundPieces
+		{
+			sprite.runAction(moveGroundAction)
+		}
+	}
+	
+	func checkGroundMovement()
+	{
+		for var i = 0; i < groundPieces.count; i++
+		{
+			if groundPieces[i].position.x <= groundResetXCoord
+			{
+				if i != 0
+				{
+					groundPieces[i].position = CGPointMake(groundPieces[i - 1].position.x + groundPieces[i].size.width, groundPieces[i].position.y)
+				}
+				else
+				{
+					groundPieces[i].position = CGPointMake(groundPieces[groundPieces.count - 1].position.x + groundPieces[i].size.width,groundPieces[i].position.y)
+				}
+			}
+		}
 	}
 	
 	/**
