@@ -11,8 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
 	
 	var background = SKSpriteNode()
-	var ground1 = SKSpriteNode()
-	var ground2 = SKSpriteNode()
+	var groundPieces = [SKSpriteNode]()
 	var hero = Hero()
 	var thug = Thug()
    
@@ -31,12 +30,25 @@ class GameScene: SKScene {
 		super.init(size: size)
 		
 		anchorPoint = CGPoint(x: 0, y: 1.0)
+	}
+	
+	override func didMoveToView(view: SKView) {
+		/* Setup your scene here */
+		loadGame()
+		
+		startGame()
+	}
+	
+	/**
+		Loads all the images into the game that are needed in the beginning.
+	*/
+	func loadGame()
+	{
 		loadBackground()
+		loadGround()
+		
 		loadHero()
 		loadThug()
-		
-		hero.stand()
-		thug.stand()
 	}
 	
 	/**
@@ -49,18 +61,36 @@ class GameScene: SKScene {
 		background.anchorPoint = CGPoint(x: 0, y: 1.0)
 		background.size = size
 		
-		ground1 = SKSpriteNode(imageNamed: "caveFloor")
-		ground1.position = CGPoint(x: 0, y: 0)
-		ground1.anchorPoint = CGPoint(x: 0, y: 1.0)
-		ground1.size = size
-		
-		ground2 = SKSpriteNode(imageNamed: "caveFloor")
-		ground2.position = CGPoint(x: 0, y: 0)
-		ground2.anchorPoint = CGPoint(x: 0, y: 1.0)
-		ground2.size = size
-		
-		addChild(background)
-		addChild(ground1)
+		self.addChild(background)
+	}
+	
+	/**
+		Adds the ground and prepares it to loop.
+	*/
+	func loadGround()
+	{
+		for var i = 0; i < 2; i++
+		{
+			var groundSprite = SKSpriteNode(imageNamed: "caveFloor")
+			groundSprite.size = size
+			groundSprite.anchorPoint = CGPoint(x: 1.0, y: 1.0)
+			groundPieces.append(groundSprite)
+			
+			var widthSpace = (groundSprite.size.width / 2)
+			var heightSpace = (groundSprite.size.height / 2)
+			
+			if i == 0
+			{
+				groundSprite.position = CGPointMake(0, 0)
+			}
+			else
+			{
+				groundSprite.position = CGPointMake((widthSpace*2) + groundPieces[i - 1].position.x, groundPieces[i - 1].position.y)
+			}
+			
+			self.addChild(groundSprite)
+		}
+
 	}
 	
 	/**
@@ -79,5 +109,14 @@ class GameScene: SKScene {
 	{
 		addChild(thug.sprite)
 		thug.load()
+	}
+	
+	/**
+		Starts the game animations.
+	*/
+	func startGame()
+	{
+		hero.stand()
+		thug.stand()
 	}
 }
