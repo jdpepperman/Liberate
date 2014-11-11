@@ -10,24 +10,28 @@ import SpriteKit
 
 class Character
 {
+	var currently: String
+	
 	var sprite: SKSpriteNode
 	var standing1: String
 	var standing2: String
 	
-	var inventory: Array<Item?>
-	//var moveSet: Array<Move?>
+	var inventory: Array<Item?> = []
+	var moveSet: Array<Move?> = []
 	var stats: [String : Int]
 	
+	var moveList: MoveList = MoveList()
 	
 	/**
 		Sets up the character.
 	
-		:param: scene the scene the character belongs to
 		:param: standing1 the string name of the file of the first standing animation for this character
 		:param: standing2 the string name of the file of the second standing animation for this character
 	*/
 	init(standing1: String, standing2: String)
 	{
+		self.currently = "nothing"
+		
 		sprite = SKSpriteNode()
 		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
 		self.standing1 = standing1
@@ -39,12 +43,13 @@ class Character
 			"attack" : 5,
 			"defense": 5
 		]
+		
+		moveSet.append(moveList.getMove("punch"))
 	}
 	
 	/**
 		Sets up the character.
 		
-		:param: scene the scene the character belongs to
 		:param: standing1 the string name of the file of the first standing animation for this character
 		:param: standing2 the string name of the file of the second standing animation for this character
 		:param: inventory the list of items this character has
@@ -52,6 +57,8 @@ class Character
 	*/
 	init(standing1: String, standing2: String, inventory: Array<Item?>, stats: [String : Int])
 	{
+		self.currently = "nothing"
+		
 		sprite = SKSpriteNode()
 		self.standing1 = standing1
 		self.standing2 = standing2
@@ -73,12 +80,14 @@ class Character
 		let stand = SKAction.repeatActionForever(standAnimation)
 		
 		sprite.runAction(stand, withKey: "standing")
+		
+		self.currently = "standing"
 	}
 	
 	/**
 		Gets the position of the character.
 
-		:return: the position of the character in its scene as a CGPoint
+		:returns: the position of the character in its scene as a CGPoint
 	*/
 	func getPosition() -> CGPoint
 	{

@@ -13,8 +13,8 @@
 		428910921A0AB70700D7381B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428910911A0AB70700D7381B /* Character.swift */; };
 		428910941A0BC42300D7381B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428910931A0BC42300D7381B /* Hero.swift */; };
 		428910961A0BC4ED00D7381B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428910951A0BC4ED00D7381B /* Item.swift */; };
-		428910991A0BEA6A00D7381B /* heroWalking1.png in Resources */ = {isa = PBXBuildFile; fileRef = 428910971A0BEA6A00D7381B /* heroWalking1.png */; };
-		4289109A1A0BEA6A00D7381B /* heroWalking2.png in Resources */ = {isa = PBXBuildFile; fileRef = 428910981A0BEA6A00D7381B /* heroWalking2.png */; };
+		428910991A0BEA6A00D7381B /* heroRunning1.png in Resources */ = {isa = PBXBuildFile; fileRef = 428910971A0BEA6A00D7381B /* heroRunning1.png */; };
+		4289109A1A0BEA6A00D7381B /* heroRunning2.png in Resources */ = {isa = PBXBuildFile; fileRef = 428910981A0BEA6A00D7381B /* heroRunning2.png */; };
 		4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */; };
 		4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */; };
 		42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44B1A11376F00E31CE5 /* MoveList.swift */; };
@@ -46,8 +46,8 @@
 		428910911A0AB70700D7381B /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		428910931A0BC42300D7381B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		428910951A0BC4ED00D7381B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		428910971A0BEA6A00D7381B /* heroWalking1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWalking1.png; path = Resources/Images/heroWalking1.png; sourceTree = "<group>"; };
-		428910981A0BEA6A00D7381B /* heroWalking2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroWalking2.png; path = Resources/Images/heroWalking2.png; sourceTree = "<group>"; };
+		428910971A0BEA6A00D7381B /* heroRunning1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroRunning1.png; path = Resources/Images/heroRunning1.png; sourceTree = "<group>"; };
+		428910981A0BEA6A00D7381B /* heroRunning2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroRunning2.png; path = Resources/Images/heroRunning2.png; sourceTree = "<group>"; };
 		4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding1.png; path = Resources/Images/enemyRyanStanding1.png; sourceTree = "<group>"; };
 		4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding2.png; path = Resources/Images/enemyRyanStanding2.png; sourceTree = "<group>"; };
 		42C1C44B1A11376F00E31CE5 /* MoveList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveList.swift; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 				42C1C44D1A116C6300E31CE5 /* caveFloor.png */,
 				4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */,
 				4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */,
-				428910971A0BEA6A00D7381B /* heroWalking1.png */,
-				428910981A0BEA6A00D7381B /* heroWalking2.png */,
+				428910971A0BEA6A00D7381B /* heroRunning1.png */,
+				428910981A0BEA6A00D7381B /* heroRunning2.png */,
 				426117121A09E8A20098B840 /* heroStanding2.png */,
 				4261170A1A09B0970098B840 /* caveWall.png */,
 				4261170D1A09B0970098B840 /* heroStanding1.png */,
@@ -242,9 +242,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4289109A1A0BEA6A00D7381B /* heroWalking2.png in Resources */,
+				4289109A1A0BEA6A00D7381B /* heroRunning2.png in Resources */,
 				42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */,
-				428910991A0BEA6A00D7381B /* heroWalking1.png in Resources */,
+				428910991A0BEA6A00D7381B /* heroRunning1.png in Resources */,
 				4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */,
 				426117131A09E8A20098B840 /* heroStanding2.png in Resources */,
 				4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */,

@@ -41,4 +41,12 @@ class GameViewController: UIViewController
 		hero.run()
 		scene.moveGround()
 	}
+	
+	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
+		println("Swipe Right Recieved")
+	}
+	
+	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
+		println("Swipe Left Recieved")
+	}
 }
