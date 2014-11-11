@@ -80,7 +80,7 @@ class GameScene: SKScene
 		for var i = 0; i < 2; i++
 		{
 			var groundSprite = SKSpriteNode(imageNamed: "caveFloor")
-			groundSprite.size = size
+			groundSprite.size.height = size.height
 			groundSprite.anchorPoint = CGPoint(x: 1.0, y: 1.0)
 			groundPieces.append(groundSprite)
 			
