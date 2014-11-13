@@ -39,7 +39,7 @@ class GameViewController: UIViewController
 	{
 		println("Tap Recieved")
 		hero.run()
-		scene.moveGround()
+		scene.moveBackground()
 	}
 	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {

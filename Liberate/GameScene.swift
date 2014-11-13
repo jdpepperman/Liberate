@@ -14,9 +14,16 @@ class GameScene: SKScene
 	
 	var groundPieces = [SKSpriteNode]()
 	let groundSpeed: CGFloat = 500
+	var ceilingPieces = [SKSpriteNode]()
+	let ceilingSpeed: CGFloat = 800
+	
 	var moveGroundAction: SKAction!
-	var moveGroundForeverAction: SKAction!
-	let groundResetXCoord: CGFloat = 0
+	var moveGroundActionForever: SKAction!
+	
+	var moveCeilingAction: SKAction!
+	var moveCeilingActionForever: SKAction!
+	
+	let backgroundResetCoordinate: CGFloat = 0
 	
 	var hero = Hero()
 	var thug = Thug()
@@ -24,7 +31,7 @@ class GameScene: SKScene
     override func update(currentTime: CFTimeInterval)
 	{
         /* Called before each frame is rendered */
-		checkGroundMovement()
+		checkBackgroundMovement()
     }
 	
 	required init(coder aDecoder: NSCoder)
@@ -53,7 +60,6 @@ class GameScene: SKScene
 	func loadGame()
 	{
 		loadBackground()
-		loadGround()
 		
 		loadHero()
 		loadThug()
@@ -70,6 +76,8 @@ class GameScene: SKScene
 		background.size = size
 		
 		self.addChild(background)
+		loadGround()
+		loadCeiling()
 	}
 	
 	/**
@@ -101,6 +109,34 @@ class GameScene: SKScene
 	}
 	
 	/**
+		Adds the ceiling and prepares it to loop.
+	*/
+	func loadCeiling()
+	{
+		for var i = 0; i < 2; i++
+		{
+			var ceilingSprite = SKSpriteNode(imageNamed: "caveCeiling")
+			ceilingSprite.size.height = size.height
+			ceilingSprite.anchorPoint = CGPoint(x: 1.0, y: 1.0)
+			ceilingPieces.append(ceilingSprite)
+			
+			var widthSpace = (ceilingSprite.size.width / 2)
+			var heightSpace = (ceilingSprite.size.height / 2)
+			
+			if i == 0
+			{
+				ceilingSprite.position = CGPointMake(0, 0)
+			}
+			else
+			{
+				ceilingSprite.position = CGPointMake((widthSpace*2) + ceilingPieces[i - 1].position.x, ceilingPieces[i - 1].position.y)
+			}
+			
+			self.addChild(ceilingSprite)
+		}
+	}
+	
+	/**
 		Adds the hero to the screen.
 	*/
 	func loadHero()
@@ -119,12 +155,20 @@ class GameScene: SKScene
 	}
 	
 	/**
-		Moves the ground.
+		Moves the background.
 	*/
-	func moveGround()
+	func moveBackground()
 	{
 		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: 2)
-		//moveGroundForeverAction = SKAction.repeatActionForever(SKAction.sequence([moveGroundAction]))
+		moveGroundActionForever = SKAction.repeatActionForever(SKAction.sequence([moveGroundAction]))
+		
+		moveCeilingAction = SKAction.moveByX(-ceilingSpeed, y: 0, duration: 2)
+		moveCeilingActionForever = SKAction.repeatActionForever(SKAction.sequence([moveCeilingAction]))
+		
+		for sprite in ceilingPieces
+		{
+			sprite.runAction(moveCeilingAction)
+		}
 		
 		for sprite in groundPieces
 		{
@@ -133,13 +177,30 @@ class GameScene: SKScene
 	}
 	
 	/**
-		Checks to see if one of the ground images has gone off the screen. Should be called in update as this needs to be done continuously.
+		Checks to see if one of the background images has gone off the screen. Should be called in update as this needs to be done continuously.
 	*/
-	func checkGroundMovement()
+	func checkBackgroundMovement()
 	{
+		//check ceiling
+		for var i = 0; i < ceilingPieces.count; i++
+		{
+			if ceilingPieces[i].position.x <= backgroundResetCoordinate
+			{
+				if i != 0
+				{
+					ceilingPieces[i].position = CGPointMake(ceilingPieces[i - 1].position.x + ceilingPieces[i].size.width, ceilingPieces[i].position.y)
+				}
+				else
+				{
+					ceilingPieces[i].position = CGPointMake(ceilingPieces[ceilingPieces.count - 1].position.x + ceilingPieces[i].size.width,ceilingPieces[i].position.y)
+				}
+			}
+		}
+		
+		//check ground details
 		for var i = 0; i < groundPieces.count; i++
 		{
-			if groundPieces[i].position.x <= groundResetXCoord
+			if groundPieces[i].position.x <= backgroundResetCoordinate
 			{
 				if i != 0
 				{
@@ -151,6 +212,7 @@ class GameScene: SKScene
 				}
 			}
 		}
+
 	}
 	
 	/**
