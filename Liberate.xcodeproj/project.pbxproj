@@ -18,6 +18,7 @@
 		4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */; };
 		4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */; };
 		42934DA81A1426B900020502 /* caveCeiling.png in Resources */ = {isa = PBXBuildFile; fileRef = 42934DA71A1426B900020502 /* caveCeiling.png */; };
+		42A133F01A1506AA008E003A /* caveWallDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A133EF1A1506AA008E003A /* caveWallDetails.png */; };
 		42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44B1A11376F00E31CE5 /* MoveList.swift */; };
 		42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C44D1A116C6300E31CE5 /* caveFloor.png */; };
 		42C1C4501A11796300E31CE5 /* Thug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44F1A11796300E31CE5 /* Thug.swift */; };
@@ -52,6 +53,7 @@
 		4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding1.png; path = Resources/Images/enemyRyanStanding1.png; sourceTree = "<group>"; };
 		4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding2.png; path = Resources/Images/enemyRyanStanding2.png; sourceTree = "<group>"; };
 		42934DA71A1426B900020502 /* caveCeiling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveCeiling.png; path = Resources/Images/caveCeiling.png; sourceTree = "<group>"; };
+		42A133EF1A1506AA008E003A /* caveWallDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWallDetails.png; path = Resources/Images/caveWallDetails.png; sourceTree = "<group>"; };
 		42C1C44B1A11376F00E31CE5 /* MoveList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveList.swift; sourceTree = "<group>"; };
 		42C1C44D1A116C6300E31CE5 /* caveFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveFloor.png; path = Resources/Images/caveFloor.png; sourceTree = "<group>"; };
 		42C1C44F1A11796300E31CE5 /* Thug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thug.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		426117091A09B07E0098B840 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				42A133EF1A1506AA008E003A /* caveWallDetails.png */,
 				42934DA71A1426B900020502 /* caveCeiling.png */,
 				42C1C44D1A116C6300E31CE5 /* caveFloor.png */,
 				4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */,
@@ -256,6 +259,7 @@
 				4261170E1A09B0970098B840 /* caveWall.png in Resources */,
 				426117111A09B0970098B840 /* heroStanding1.png in Resources */,
 				42F59A2B19FFF53C00C69F81 /* Main.storyboard in Resources */,
+				42A133F01A1506AA008E003A /* caveWallDetails.png in Resources */,
 				42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

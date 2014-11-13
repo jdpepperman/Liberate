@@ -14,14 +14,18 @@ class GameScene: SKScene
 	
 	var groundPieces = [SKSpriteNode]()
 	let groundSpeed: CGFloat = 500
-	var ceilingPieces = [SKSpriteNode]()
-	let ceilingSpeed: CGFloat = 800
-	
 	var moveGroundAction: SKAction!
 	var moveGroundActionForever: SKAction!
 	
+	var ceilingPieces = [SKSpriteNode]()
+	let ceilingSpeed: CGFloat = 800
 	var moveCeilingAction: SKAction!
 	var moveCeilingActionForever: SKAction!
+	
+	var wallPieces = [SKSpriteNode]()
+	let wallSpeed: CGFloat = 250
+	var moveWallAction: SKAction!
+	var moveWallActionForever: SKAction!
 	
 	let backgroundResetCoordinate: CGFloat = 0
 	
@@ -60,13 +64,17 @@ class GameScene: SKScene
 	func loadGame()
 	{
 		loadBackground()
+		loadWallDetails()
+		loadGround()
 		
 		loadHero()
 		loadThug()
+		
+		loadCeiling()
 	}
 	
 	/**
-		Adds the background image, places, and sizes it. Should be called once while setting up the scene.
+		Adds the background images, places, and sizes it. Should be called once while setting up the scene.
 	*/
 	func loadBackground()
 	{
@@ -76,8 +84,6 @@ class GameScene: SKScene
 		background.size = size
 		
 		self.addChild(background)
-		loadGround()
-		loadCeiling()
 	}
 	
 	/**
@@ -137,6 +143,34 @@ class GameScene: SKScene
 	}
 	
 	/**
+	Adds the wall details and prepares it to loop.
+	*/
+	func loadWallDetails()
+	{
+		for var i = 0; i < 2; i++
+		{
+			var wallSprite = SKSpriteNode(imageNamed: "caveWallDetails")
+			wallSprite.size.height = size.height
+			wallSprite.anchorPoint = CGPoint(x: 1.0, y: 1.0)
+			wallPieces.append(wallSprite)
+			
+			var widthSpace = (wallSprite.size.width / 2)
+			var heightSpace = (wallSprite.size.height / 2)
+			
+			if i == 0
+			{
+				wallSprite.position = CGPointMake(0, 0)
+			}
+			else
+			{
+				wallSprite.position = CGPointMake((widthSpace*2) + wallPieces[i - 1].position.x, wallPieces[i - 1].position.y)
+			}
+			
+			self.addChild(wallSprite)
+		}
+	}
+	
+	/**
 		Adds the hero to the screen.
 	*/
 	func loadHero()
@@ -165,6 +199,9 @@ class GameScene: SKScene
 		moveCeilingAction = SKAction.moveByX(-ceilingSpeed, y: 0, duration: 2)
 		moveCeilingActionForever = SKAction.repeatActionForever(SKAction.sequence([moveCeilingAction]))
 		
+		moveWallAction = SKAction.moveByX(-wallSpeed, y: 0, duration: 2)
+		moveWallActionForever = SKAction.repeatActionForever(SKAction.sequence([moveWallAction]))
+		
 		for sprite in ceilingPieces
 		{
 			sprite.runAction(moveCeilingAction)
@@ -173,6 +210,11 @@ class GameScene: SKScene
 		for sprite in groundPieces
 		{
 			sprite.runAction(moveGroundAction)
+		}
+		
+		for sprite in wallPieces
+		{
+			sprite.runAction(moveWallAction)
 		}
 	}
 	
@@ -192,7 +234,7 @@ class GameScene: SKScene
 				}
 				else
 				{
-					ceilingPieces[i].position = CGPointMake(ceilingPieces[ceilingPieces.count - 1].position.x + ceilingPieces[i].size.width,ceilingPieces[i].position.y)
+					ceilingPieces[i].position = CGPointMake(ceilingPieces[ceilingPieces.count - 1].position.x + ceilingPieces[i].size.width, ceilingPieces[i].position.y)
 				}
 			}
 		}
@@ -208,7 +250,23 @@ class GameScene: SKScene
 				}
 				else
 				{
-					groundPieces[i].position = CGPointMake(groundPieces[groundPieces.count - 1].position.x + groundPieces[i].size.width,groundPieces[i].position.y)
+					groundPieces[i].position = CGPointMake(groundPieces[groundPieces.count - 1].position.x + groundPieces[i].size.width, groundPieces[i].position.y)
+				}
+			}
+		}
+		
+		//check wall details
+		for var i = 0; i < wallPieces.count; i++
+		{
+			if wallPieces[i].position.x <= backgroundResetCoordinate
+			{
+				if i != 0
+				{
+					wallPieces[i].position = CGPointMake(wallPieces[i - 1].position.x + wallPieces[i].size.width, wallPieces[i].position.y)
+				}
+				else
+				{
+					wallPieces[i].position = CGPointMake(wallPieces[wallPieces.count - 1].position.x + wallPieces[i].size.width, wallPieces[i].position.y)
 				}
 			}
 		}
