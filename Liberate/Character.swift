@@ -20,8 +20,7 @@ class Character
 	var moveSet: Array<Move?> = []
 	var stats: [String : Int]
 	
-	var moveList: MoveList = MoveList()
-	
+	var moveList: MoveList
 	/**
 		Sets up the character.
 	
@@ -31,6 +30,7 @@ class Character
 	init(standing1: String, standing2: String)
 	{
 		self.currently = "nothing"
+		self.moveList = MoveList()
 		
 		sprite = SKSpriteNode()
 		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
@@ -43,7 +43,11 @@ class Character
 			"attack" : 5,
 			"defense": 5
 		]
-		
+	}
+	
+	func setUpMoves()
+	{
+		self.moveList = MoveList(character: self)
 		moveSet.append(moveList.getMove("punch"))
 	}
 	
@@ -65,6 +69,8 @@ class Character
 
 		self.inventory = inventory
 		self.stats = stats
+		
+		self.moveList = MoveList()
 	}
 	
 	/**
@@ -82,6 +88,8 @@ class Character
 		sprite.runAction(stand, withKey: "standing")
 		
 		self.currently = "standing"
+		
+		self.setUpMoves()
 	}
 	
 	/**
@@ -93,5 +101,16 @@ class Character
 	{
 		var pos: CGPoint = sprite.position
 		return pos
+	}
+	
+	func addMove(moveToAdd: Move)
+	{
+		self.moveSet.append(moveToAdd)
+	}
+	
+	func doMove(moveToDo: String)
+	{
+		//moveList.moveList[moveToDo]?.animate(self)
+		moveList.moveList[moveToDo]?.animate()
 	}
 }

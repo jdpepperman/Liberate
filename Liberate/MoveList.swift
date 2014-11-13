@@ -6,30 +6,40 @@
 //  Copyright (c) 2014 Joshua Pepperman. All rights reserved.
 //
 
+import SpriteKit
+
 /**
 This should have a list of moves with their names, descriptions, and attack powers.
 */
 class MoveList
 {
 	var moveList: [String: Move] = [:]
-	//var animation: (Character) -> ()
+	
+	init()
+	{
+		
+	}
 	
 	/**
 		Sets up MoveList by adding all available moves to the list.
 	*/
-	init()
+	init(character: Character)
 	{
 		//punch
-		func punchAnimation(c: Character)
+		func punchAnimation()
 		{
-			c.sprite.position.x += 5
-			c.sprite.position.x -= 5
+			var punchActionForward = SKAction.moveByX(300, y: 0, duration: 0.1)
+			var punchActionBackward = SKAction.moveByX(-300, y: 0, duration: 0.2)
+			
+			character.sprite.runAction(punchActionForward)
+			character.sprite.runAction(punchActionBackward)
+			
 		}
 		
 		self.moveList.updateValue(Move(name: "punch", power: 5, description: "Attacks the foe with fists.", animation: punchAnimation) , forKey: "punch")
 		
 		//kick
-		func kickAnimation(c: Character)
+		func kickAnimation()
 		{
 			
 		}
@@ -41,10 +51,10 @@ class MoveList
 		:param: character the character doing the move
 		:param: moveKey the name of the move to be done
 	*/
-	func doMove(character: Character, moveKey: String)
-	{
-		moveList[moveKey]!.animate(character)
-	}
+//	func doMove(character: Character, moveKey: String)
+//	{
+//		moveList[moveKey]!.animate(character)
+//	}
 	
 	/**
 		Gets the move with the name moveKey.
@@ -63,9 +73,9 @@ class Move
 	var name: String
 	var power: Int
 	var description: String
-	var animation: (Character) -> ()
+	var animation: () -> ()
 	
-	init(name: String, power: Int, description: String, animation: (Character) -> ())
+	init(name: String, power: Int, description: String, animation: () -> ())
 	{
 		self.name = name
 		self.power = power
@@ -74,8 +84,8 @@ class Move
 	}
 	
 	
-	func animate(character: Character)
+	func animate()
 	{
-		animation(character)
+		animation()
 	}
 }

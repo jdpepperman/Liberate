@@ -44,6 +44,7 @@ class GameViewController: UIViewController
 	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
 		println("Swipe Right Recieved")
+		hero.doMove("punch")
 	}
 	
 	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {

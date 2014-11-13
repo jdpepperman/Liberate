@@ -40,14 +40,6 @@ class Hero: Character
 	}
 	
 	/**
-		Attacks an opponent with fists
-	*/
-//	func punch()
-//	{
-//		//move the sprite forward a little and make a whack animation on the enemy (?)
-//	}
-	
-	/**
 		Loads the Hero in relation to the screen. Call this once after the sprite has been added to the scene.
 	*/
 	func load()
