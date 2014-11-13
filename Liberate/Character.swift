@@ -8,6 +8,10 @@
 
 import SpriteKit
 
+/**
+	This class defines a Character. There should be no plain characters in the game, as this will just give the Hero and the
+	enemies some basic things that they all need.
+*/
 class Character
 {
 	var currently: String
@@ -17,7 +21,7 @@ class Character
 	var standing2: String
 	
 	var inventory: Array<Item?> = []
-	var moveSet: Array<Move?> = []
+	var moveSet: [Move] = []
 	var stats: [String : Int]
 	
 	var moveList: MoveList
@@ -45,10 +49,13 @@ class Character
 		]
 	}
 	
-	func setUpMoves()
+	private func setUpMoves()
 	{
 		self.moveList = MoveList(character: self)
+		moveSet.append(moveList.getMove("blank"))
 		moveSet.append(moveList.getMove("punch"))
+		moveSet.append(moveList.getMove("blank"))
+		moveSet.append(moveList.getMove("kick"))
 	}
 	
 	/**
@@ -99,18 +106,67 @@ class Character
 	*/
 	func getPosition() -> CGPoint
 	{
-		var pos: CGPoint = sprite.position
-		return pos
+		return sprite.position
 	}
 	
-	func addMove(moveToAdd: Move)
+	/**
+		Adds a move to the character's moveSet.
+	
+		:param: moveToAdd the Move to add to the moveSet
+		:param: position the directions swipe for the move to be added in. 0- up, 1- right, 2- down, 3- left
+	*/
+	func changeMove(moveToAdd: Move, position: Int)
 	{
-		self.moveSet.append(moveToAdd)
+		switch position {
+		case 0:
+			moveSet[0] = moveToAdd
+			break
+		case 1:
+			moveSet[1] = moveToAdd
+			break
+		case 2:
+			moveSet[2] = moveToAdd
+			break
+		case 3:
+			moveSet[3] = moveToAdd
+			break
+		default:
+			break
+		}
 	}
 	
-	func doMove(moveToDo: String)
+	/**
+		Makes this character do the move specified. This can do any move from the moveList
+	
+		:param: moveToDo the name of the Move to do
+	*/
+	private func doMove(moveToDo: String)
 	{
-		//moveList.moveList[moveToDo]?.animate(self)
 		moveList.moveList[moveToDo]?.animate()
+	}
+	
+	/**
+		Makes this character do the move specified from its moveSet.
+	
+		:param: direction the direction of the swipe move. 0- up, 1- right, 2- down, 3- left
+	*/
+	func doMove(direction: Int)
+	{
+		switch direction {
+		case 0:
+			moveSet[0].animate()
+			break
+		case 1:
+			moveSet[1].animate()
+			break
+		case 2:
+			moveSet[2].animate()
+			break
+		case 3:
+			moveSet[3].animate()
+			break
+		default:
+			break
+		}
 	}
 }

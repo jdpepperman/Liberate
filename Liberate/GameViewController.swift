@@ -12,7 +12,6 @@ import SpriteKit
 class GameViewController: UIViewController
 {
 	var scene: GameScene!
-	var panPointReference: CGPoint?
 	var hero: Hero!
 	
     override func viewDidLoad()
@@ -42,12 +41,27 @@ class GameViewController: UIViewController
 		scene.moveBackground()
 	}
 	
+	
+	//		0
+	//	3 --+-- 1
+	//		2
+	@IBAction func swipeUp(sender: UISwipeGestureRecognizer) {
+		println("Swipe Up Recieved")
+		hero.doMove(0)
+	}
+	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
 		println("Swipe Right Recieved")
-		hero.doMove("punch")
+		hero.doMove(1)
+	}
+	
+	@IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
+		println("Swipe Down Recieved")
+		hero.doMove(2)
 	}
 	
 	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
 		println("Swipe Left Recieved")
+		hero.doMove(3)
 	}
 }

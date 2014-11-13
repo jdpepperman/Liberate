@@ -30,7 +30,7 @@ class GameScene: SKScene
 	let backgroundResetCoordinate: CGFloat = 0
 	
 	var hero = Hero()
-	var thug = Thug()
+	var enemey = Thug()
    
     override func update(currentTime: CFTimeInterval)
 	{
@@ -184,8 +184,8 @@ class GameScene: SKScene
 	*/
 	func loadThug()
 	{
-		addChild(thug.sprite)
-		thug.load()
+		addChild(enemey.sprite)
+		enemey.load()
 	}
 	
 	/**
@@ -278,7 +278,7 @@ class GameScene: SKScene
 	func startGame()
 	{
 		hero.stand()
-		thug.stand()
+		enemey.stand()
 
 		/*
 			TO-DO:	Make tapping the screen punch the enemy, taking away health until he is defeated.

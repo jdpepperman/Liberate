@@ -40,6 +40,14 @@ class Hero: Character
 	}
 	
 	/**
+		The move done by 
+	*/
+	func doRightMove(ememy: Character)
+	{
+		
+	}
+	
+	/**
 		Loads the Hero in relation to the screen. Call this once after the sprite has been added to the scene.
 	*/
 	func load()

@@ -21,6 +21,8 @@
                             <outletCollection property="gestureRecognizers" destination="uzI-lZ-JEH" appends="YES" id="7Av-Zg-hLB"/>
                             <outletCollection property="gestureRecognizers" destination="8iZ-Zj-5bG" appends="YES" id="3bb-a9-J85"/>
                             <outletCollection property="gestureRecognizers" destination="FW5-Jw-aIF" appends="YES" id="ntR-da-GHp"/>
+                            <outletCollection property="gestureRecognizers" destination="TdD-jI-cfZ" appends="YES" id="Bhm-xE-DW6"/>
+                            <outletCollection property="gestureRecognizers" destination="Wmu-dH-3wL" appends="YES" id="3mJ-MA-AbX"/>
                         </connections>
                     </view>
                 </viewController>
@@ -31,10 +33,22 @@
                         <outlet property="delegate" destination="LVB-YS-i5n" id="9mg-fC-Dol"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="TdD-jI-cfZ">
+                    <connections>
+                        <action selector="swipeUp:" destination="LVB-YS-i5n" id="lod-o3-XjJ"/>
+                        <outlet property="delegate" destination="LVB-YS-i5n" id="Frp-uL-pfb"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="8iZ-Zj-5bG">
                     <connections>
                         <action selector="swipeRight:" destination="LVB-YS-i5n" id="ntq-2W-98x"/>
                         <outlet property="delegate" destination="LVB-YS-i5n" id="I66-p3-Wd2"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="Wmu-dH-3wL">
+                    <connections>
+                        <action selector="swipeDown:" destination="LVB-YS-i5n" id="Hyi-MJ-a4d"/>
+                        <outlet property="delegate" destination="LVB-YS-i5n" id="jKe-xd-btM"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="FW5-Jw-aIF">
