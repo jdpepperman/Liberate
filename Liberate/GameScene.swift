@@ -10,27 +10,37 @@ import SpriteKit
 
 class GameScene: SKScene
 {
+	let advanceTime: NSTimeInterval = 3 //seconds
+	let enemyStartCoordinate: CGPoint
+	
 	var background = SKSpriteNode()
 	
 	var groundPieces = [SKSpriteNode]()
-	let groundSpeed: CGFloat = 500
+	let groundSpeed: CGFloat// = 500
 	var moveGroundAction: SKAction!
 	var moveGroundActionForever: SKAction!
 	
 	var ceilingPieces = [SKSpriteNode]()
-	let ceilingSpeed: CGFloat = 800
+	let ceilingSpeed: CGFloat// = 800
 	var moveCeilingAction: SKAction!
 	var moveCeilingActionForever: SKAction!
 	
 	var wallPieces = [SKSpriteNode]()
-	let wallSpeed: CGFloat = 250
+	let wallSpeed: CGFloat// = 250
 	var moveWallAction: SKAction!
 	var moveWallActionForever: SKAction!
 	
+	var moveEnemyAction: SKAction!
+	var moveEnemyActionForever: SKAction!
+	
 	let backgroundResetCoordinate: CGFloat = 0
 	
+	//var enemyStopCoordinate: CGFloat
+	var enemyStopCoordinate: CGPoint
+	var stop: Bool = false
+	
 	var hero = Hero()
-	var enemey = Thug()
+	var enemy = Thug()
    
     override func update(currentTime: CFTimeInterval)
 	{
@@ -45,6 +55,15 @@ class GameScene: SKScene
 	
 	override init(size: CGSize)
 	{
+		///his x coordinate is goint to be the number of seconds he has to travel times 250, so he will move250 pixels per second. Then we add the number of pixels of the position we want him to end in,so he will stay in the same spot relative to the ground.
+		enemyStartCoordinate = CGPoint(x: CGFloat(advanceTime)*250 + (size.width / 3)*2, y: -(size.height / 3)*2)
+		enemyStopCoordinate = CGPoint(x: (size.width / 3)*2, y: -(size.height / 3)*2)
+		
+		groundSpeed = CGFloat(advanceTime)*250
+		ceilingSpeed = CGFloat(advanceTime)*400
+		wallSpeed = CGFloat(advanceTime)*125
+		
+		
 		super.init(size: size)
 		
 		anchorPoint = CGPoint(x: 0, y: 1.0)
@@ -184,8 +203,8 @@ class GameScene: SKScene
 	*/
 	func loadThug()
 	{
-		addChild(enemey.sprite)
-		enemey.load()
+		addChild(enemy.sprite)
+		enemy.load(enemyStartCoordinate)
 	}
 	
 	/**
@@ -193,14 +212,17 @@ class GameScene: SKScene
 	*/
 	func moveBackground()
 	{
-		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: 2)
+		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: advanceTime)
 		moveGroundActionForever = SKAction.repeatActionForever(SKAction.sequence([moveGroundAction]))
 		
-		moveCeilingAction = SKAction.moveByX(-ceilingSpeed, y: 0, duration: 2)
+		moveCeilingAction = SKAction.moveByX(-ceilingSpeed, y: 0, duration: advanceTime)
 		moveCeilingActionForever = SKAction.repeatActionForever(SKAction.sequence([moveCeilingAction]))
 		
-		moveWallAction = SKAction.moveByX(-wallSpeed, y: 0, duration: 2)
+		moveWallAction = SKAction.moveByX(-wallSpeed, y: 0, duration: advanceTime)
 		moveWallActionForever = SKAction.repeatActionForever(SKAction.sequence([moveWallAction]))
+		
+		moveEnemyAction = SKAction.moveTo(enemyStopCoordinate, duration: advanceTime)
+		moveEnemyActionForever = SKAction.repeatActionForever(SKAction.sequence([moveEnemyAction]))
 		
 		for sprite in ceilingPieces
 		{
@@ -216,6 +238,8 @@ class GameScene: SKScene
 		{
 			sprite.runAction(moveWallAction)
 		}
+		
+		enemy.sprite.runAction(moveEnemyAction)
 	}
 	
 	/**
@@ -270,6 +294,24 @@ class GameScene: SKScene
 				}
 			}
 		}
+		
+//		if enemy.sprite.position.x == enemyStopCoordinate
+//		{
+//			moveBackground()
+//			hero.run()
+//		}
+	}
+	
+	/**
+		This will advance the background, make the hero run, and bring the next enemy into view.
+	*/
+	func advance()
+	{
+		//while enemy.sprite.position != enemyStopCoordinate
+		//{
+			moveBackground()
+			hero.run(advanceTime)
+		//} 32
 	}
 	
 	/**
@@ -278,7 +320,7 @@ class GameScene: SKScene
 	func startGame()
 	{
 		hero.stand()
-		enemey.stand()
+		enemy.stand()
 
 		/*
 			TO-DO:	Make tapping the screen punch the enemy, taking away health until he is defeated.

@@ -25,26 +25,23 @@ class Hero: Character
 	}
 	
 	/**
-		Animates the hero walking
-	*/
-	func run()
-	{
-		let heroWalkAnimation = SKAction.animateWithTextures([
-			SKTexture(imageNamed: "heroWalking1"),
-			SKTexture(imageNamed: "heroWalking2")
-			], timePerFrame: 0.1)
-		
-		let walk = SKAction.repeatAction(heroWalkAnimation, count: 10)
-		
-		sprite.runAction(walk, withKey: "running")
-	}
+		Animates the hero running.
 	
-	/**
-		The move done by 
+		:param: time the time for the animation to play
 	*/
-	func doRightMove(ememy: Character)
+	func run(time: NSTimeInterval)
 	{
+		var tpf = 0.1
+		let heroRunAnimation = SKAction.animateWithTextures([
+			SKTexture(imageNamed: "heroRunning1"),
+			SKTexture(imageNamed: "heroRunning2")
+			], timePerFrame: tpf)
 		
+		var repitions = Int(time / tpf) / 2
+		
+		let run = SKAction.repeatAction(heroRunAnimation, count: repitions)
+		
+		sprite.runAction(run, withKey: "running")
 	}
 	
 	/**

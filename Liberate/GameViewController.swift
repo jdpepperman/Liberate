@@ -37,8 +37,8 @@ class GameViewController: UIViewController
 	@IBAction func didTap(sender: UITapGestureRecognizer)
 	{
 		println("Tap Recieved")
-		hero.run()
-		scene.moveBackground()
+		//hero.run()
+		scene.advance()
 	}
 	
 	

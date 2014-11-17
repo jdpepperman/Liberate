@@ -24,10 +24,11 @@ class Thug: Character
 	
 	/**
 		Loads the Thug in relation to the screen. Call this once after the sprite has been added to the scene.
+	
+		:param: position the place on the screen to add the thug
 	*/
-	func load()
+	func load(position: CGPoint)
 	{
-		// two thirds across the screen
-		sprite.position = CGPoint(x: (sprite.scene!.size.width / 3)*2, y: -(sprite.scene!.size.height / 3)*2)
+		sprite.position = position
 	}
 }
