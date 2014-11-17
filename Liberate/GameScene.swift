@@ -16,17 +16,17 @@ class GameScene: SKScene
 	var background = SKSpriteNode()
 	
 	var groundPieces = [SKSpriteNode]()
-	let groundSpeed: CGFloat// = 500
+	let groundSpeed: CGFloat
 	var moveGroundAction: SKAction!
 	var moveGroundActionForever: SKAction!
 	
 	var ceilingPieces = [SKSpriteNode]()
-	let ceilingSpeed: CGFloat// = 800
+	let ceilingSpeed: CGFloat
 	var moveCeilingAction: SKAction!
 	var moveCeilingActionForever: SKAction!
 	
 	var wallPieces = [SKSpriteNode]()
-	let wallSpeed: CGFloat// = 250
+	let wallSpeed: CGFloat
 	var moveWallAction: SKAction!
 	var moveWallActionForever: SKAction!
 	
@@ -35,7 +35,6 @@ class GameScene: SKScene
 	
 	let backgroundResetCoordinate: CGFloat = 0
 	
-	//var enemyStopCoordinate: CGFloat
 	var enemyStopCoordinate: CGPoint
 	var stop: Bool = false
 	
@@ -294,12 +293,6 @@ class GameScene: SKScene
 				}
 			}
 		}
-		
-//		if enemy.sprite.position.x == enemyStopCoordinate
-//		{
-//			moveBackground()
-//			hero.run()
-//		}
 	}
 	
 	/**
@@ -307,11 +300,8 @@ class GameScene: SKScene
 	*/
 	func advance()
 	{
-		//while enemy.sprite.position != enemyStopCoordinate
-		//{
-			moveBackground()
-			hero.run(advanceTime)
-		//} 32
+		moveBackground()
+		hero.run(advanceTime)
 	}
 	
 	/**
