@@ -40,11 +40,16 @@ class GameScene: SKScene
 	
 	var hero = Hero()
 	var enemy = Thug()
+	
+	var gameState: String = "starting"
    
     override func update(currentTime: CFTimeInterval)
 	{
         /* Called before each frame is rendered */
 		checkBackgroundMovement()
+		checkHealth()
+		
+		runGame()
     }
 	
 	required init(coder aDecoder: NSCoder)
@@ -86,7 +91,7 @@ class GameScene: SKScene
 		loadGround()
 		
 		loadHero()
-		loadThug()
+		loadEnemy()
 		
 		loadCeiling()
 	}
@@ -94,7 +99,7 @@ class GameScene: SKScene
 	/**
 		Adds the background images, places, and sizes it. Should be called once while setting up the scene.
 	*/
-	func loadBackground()
+	private func loadBackground()
 	{
 		background = SKSpriteNode(imageNamed: "caveWall")
 		background.position = CGPoint(x: 0, y: 0)
@@ -107,7 +112,7 @@ class GameScene: SKScene
 	/**
 		Adds the ground and prepares it to loop.
 	*/
-	func loadGround()
+	private func loadGround()
 	{
 		for var i = 0; i < 2; i++
 		{
@@ -135,7 +140,7 @@ class GameScene: SKScene
 	/**
 		Adds the ceiling and prepares it to loop.
 	*/
-	func loadCeiling()
+	private func loadCeiling()
 	{
 		for var i = 0; i < 2; i++
 		{
@@ -163,7 +168,7 @@ class GameScene: SKScene
 	/**
 	Adds the wall details and prepares it to loop.
 	*/
-	func loadWallDetails()
+	private func loadWallDetails()
 	{
 		for var i = 0; i < 2; i++
 		{
@@ -191,7 +196,7 @@ class GameScene: SKScene
 	/**
 		Adds the hero to the screen.
 	*/
-	func loadHero()
+	private func loadHero()
 	{
 		addChild(hero.sprite)
 		hero.load()
@@ -200,16 +205,17 @@ class GameScene: SKScene
 	/**
 		Adds the thug to the screen.
 	*/
-	func loadThug()
+	private func loadEnemy()
 	{
 		addChild(enemy.sprite)
 		enemy.load(enemyStartCoordinate)
+		enemy.stand()
 	}
 	
 	/**
-		Moves the background.
+		Moves the background and the enemy.
 	*/
-	func moveBackground()
+	private func moveBackground()
 	{
 		moveGroundAction = SKAction.moveByX(-groundSpeed, y: 0, duration: advanceTime)
 		moveGroundActionForever = SKAction.repeatActionForever(SKAction.sequence([moveGroundAction]))
@@ -244,7 +250,7 @@ class GameScene: SKScene
 	/**
 		Checks to see if one of the background images has gone off the screen. Should be called in update as this needs to be done continuously.
 	*/
-	func checkBackgroundMovement()
+	private func checkBackgroundMovement()
 	{
 		//check ceiling
 		for var i = 0; i < ceilingPieces.count; i++
@@ -295,6 +301,17 @@ class GameScene: SKScene
 		}
 	}
 	
+	private func checkHealth()
+	{
+		if enemy.health <= 0
+		{
+			enemy.die()
+			var enemy2 = Thug()
+			enemy = enemy2
+			loadEnemy()
+		}
+	}
+	
 	/**
 		This will advance the background, make the hero run, and bring the next enemy into view.
 	*/
@@ -307,14 +324,31 @@ class GameScene: SKScene
 	/**
 		Starts the game animations.
 	*/
-	func startGame()
+	private func startGame()
 	{
 		hero.stand()
-		enemy.stand()
-
+		//enemy.stand()
+		
+	}
+	
+	private func runGame()
+	{
+		if (floor(enemy.sprite.position.x)) != floor(enemyStopCoordinate.x) && (gameState != "advancing")
+		{
+			gameState = "advancing"
+			println(gameState)
+			advance()
+		}
+		if floor(enemy.sprite.position.x) == floor(enemyStopCoordinate.x) && gameState != "battling"
+		{
+			gameState = "battling"
+			println(gameState)
+		}
+		
 		/*
-			TO-DO:	Make tapping the screen punch the enemy, taking away health until he is defeated.
-			Then move everything until a new enemy is at the same spot and repeat.
+		TO-DO:	Make tapping the screen punch the enemy, taking away health until he is defeated.
+		Then move everything until a new enemy is at the same spot and repeat.
 		*/
+
 	}
 }

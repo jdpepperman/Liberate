@@ -23,6 +23,7 @@ class Character
 	var inventory: Array<Item?> = []
 	var moveSet: [Move] = []
 	var stats: [String : Int]
+	var health: Int
 	
 	var moveList: MoveList
 	/**
@@ -47,6 +48,8 @@ class Character
 			"attack" : 5,
 			"defense": 5
 		]
+		
+		self.health = self.stats["health"]!
 	}
 	
 	private func setUpMoves()
@@ -78,6 +81,8 @@ class Character
 		self.stats = stats
 		
 		self.moveList = MoveList()
+		
+		self.health = self.stats["health"]!
 	}
 	
 	/**

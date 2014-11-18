@@ -13,6 +13,7 @@ class GameViewController: UIViewController
 {
 	var scene: GameScene!
 	var hero: Hero!
+	var enemy: Thug!
 	
     override func viewDidLoad()
 	{
@@ -25,6 +26,7 @@ class GameViewController: UIViewController
 		scene.scaleMode = .AspectFill
 		
 		hero = scene.hero
+		enemy = scene.enemy
 		
 		skView.presentScene(scene)
     }
@@ -37,7 +39,7 @@ class GameViewController: UIViewController
 	@IBAction func didTap(sender: UITapGestureRecognizer)
 	{
 		println("Tap Recieved")
-		scene.advance()
+		//scene.advance()
 	}
 	
 	
@@ -46,21 +48,26 @@ class GameViewController: UIViewController
 	//		2
 	@IBAction func swipeUp(sender: UISwipeGestureRecognizer) {
 		println("Swipe Up Recieved")
-		hero.doMove(0)
+		if scene.gameState == "battling" { hero.doMove(0) }
 	}
 	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
 		println("Swipe Right Recieved")
-		hero.doMove(1)
+		if scene.gameState == "battling"
+		{
+			hero.doMove(1)
+			enemy.health -= 5
+			println(enemy.health)
+		}
 	}
 	
 	@IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
 		println("Swipe Down Recieved")
-		hero.doMove(2)
+		if scene.gameState == "battling" { hero.doMove(2) }
 	}
 	
 	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
 		println("Swipe Left Recieved")
-		hero.doMove(3)
+		if scene.gameState == "battling" { hero.doMove(3) }
 	}
 }

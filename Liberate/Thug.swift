@@ -31,4 +31,10 @@ class Thug: Character
 	{
 		sprite.position = position
 	}
+	
+	func die()
+	{
+		//sprite.scene?.removeChildrenInArray([Thug()])
+		sprite.removeFromParent()
+	}
 }
