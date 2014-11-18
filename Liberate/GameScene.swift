@@ -41,6 +41,14 @@ class GameScene: SKScene
 	var hero = Hero()
 	var enemy = Thug()
 	
+	let heroHealthLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	let heroAttackLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	let heroDefenseLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	
+	let enemyHealthLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	let enemyAttackLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	let enemyDefenseLabel: SKLabelNode = SKLabelNode(fontNamed: "OpenSans-Bold")
+	
 	var gameState: String = "starting"
    
     override func update(currentTime: CFTimeInterval)
@@ -200,6 +208,7 @@ class GameScene: SKScene
 	{
 		addChild(hero.sprite)
 		hero.load()
+		//setUpHeroStatsLabels()
 	}
 	
 	/**
@@ -210,6 +219,7 @@ class GameScene: SKScene
 		addChild(enemy.sprite)
 		enemy.load(enemyStartCoordinate)
 		enemy.stand()
+		//setUpEnemyStatsLabels()
 	}
 	
 	/**
@@ -301,15 +311,32 @@ class GameScene: SKScene
 		}
 	}
 	
+	var prevHealth: Int = 0
 	private func checkHealth()
 	{
+		if enemy.health != prevHealth
+		{
+			enemyHealthLabel.removeFromParent()
+			enemyAttackLabel.removeFromParent()
+			enemyDefenseLabel.removeFromParent()
+			
+			setUpEnemyStatsLabels()
+		}
+
 		if enemy.health <= 0
 		{
 			enemy.die()
+			
+			enemyHealthLabel.removeFromParent()
+			enemyAttackLabel.removeFromParent()
+			enemyDefenseLabel.removeFromParent()
+			
 			var enemy2 = Thug()
 			enemy = enemy2
 			loadEnemy()
+			setUpEnemyStatsLabels()
 		}
+		prevHealth = enemy.health
 	}
 	
 	/**
@@ -327,7 +354,69 @@ class GameScene: SKScene
 	private func startGame()
 	{
 		hero.stand()
+		setUpHeroStatsLabels()
+		setUpEnemyStatsLabels()
+	}
+	
+	/**
+		Creates a health label.
+	
+		:param: health the text to be put in the label
+	*/
+	func setUpHeroStatsLabels()
+	{
+//		let healthLabel = SKLabelNode(fontNamed: "OpenSans-Bold")
+		heroHealthLabel.name = "health"
+		heroHealthLabel.fontSize = 12
+		heroHealthLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		heroHealthLabel.text = "Health: " + String(hero.health)
+		heroHealthLabel.position = CGPointMake(25, size.height - 100)
 		
+		heroAttackLabel.name = "attack"
+		heroAttackLabel.fontSize = 12
+		heroAttackLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		var attack: Int = hero.stats["attack"]!
+		heroAttackLabel.text = String(attack)
+		heroAttackLabel.position = CGPointMake(25, size.height - 80)
+
+		heroDefenseLabel.name = "defense"
+		heroDefenseLabel.fontSize = 12
+		heroDefenseLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		var defense: Int = hero.stats["defense"]!
+		heroDefenseLabel.text = String(defense)
+		heroDefenseLabel.position = CGPointMake(25, size.height - 60)
+		
+		addChild(heroHealthLabel)
+		addChild(heroAttackLabel)
+		addChild(heroDefenseLabel)
+	}
+	
+	func setUpEnemyStatsLabels()
+	{
+//		let enemyStatsLabel = SKLabelNode(fontNamed: "OpenSans-Bold")
+		enemyHealthLabel.name = "health"
+		enemyHealthLabel.fontSize = 12
+		enemyHealthLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		enemyHealthLabel.text = "Health: " + String(hero.health)
+		enemyHealthLabel.position = CGPoint(x: size.width - 25, y: size.height - 100)
+		
+		enemyAttackLabel.name = "attack"
+		enemyAttackLabel.fontSize = 12
+		enemyAttackLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		var attack: Int = hero.stats["attack"]!
+		enemyAttackLabel.text = String(attack)
+		enemyAttackLabel.position = CGPoint(x: size.width - 25, y: size.height - 80)
+		
+		enemyDefenseLabel.name = "defense"
+		enemyDefenseLabel.fontSize = 12
+		enemyDefenseLabel.fontColor = UIColor(red: 0.0, green: 0.47, blue: 0.0, alpha: 1.0)
+		var defense: Int = hero.stats["defense"]!
+		enemyDefenseLabel.text = String(defense)
+		enemyDefenseLabel.position = CGPoint(x: size.width - 25, y: size.height - 60)
+		
+		addChild(enemyHealthLabel)
+		addChild(enemyAttackLabel)
+		addChild(enemyDefenseLabel)
 	}
 	
 	func tap()

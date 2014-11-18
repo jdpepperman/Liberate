@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4242CE571A1BD8C5003FBC6B /* batStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4242CE551A1BD8C5003FBC6B /* batStanding1.png */; };
+		4242CE581A1BD8C5003FBC6B /* batStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4242CE561A1BD8C5003FBC6B /* batStanding2.png */; };
+		4242CE5A1A1BD8EF003FBC6B /* Bat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4242CE591A1BD8EF003FBC6B /* Bat.swift */; };
 		4261170E1A09B0970098B840 /* caveWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170A1A09B0970098B840 /* caveWall.png */; };
 		426117111A09B0970098B840 /* heroStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4261170D1A09B0970098B840 /* heroStanding1.png */; };
 		426117131A09E8A20098B840 /* heroStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 426117121A09E8A20098B840 /* heroStanding2.png */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4242CE551A1BD8C5003FBC6B /* batStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = batStanding1.png; path = Resources/Images/batStanding1.png; sourceTree = "<group>"; };
+		4242CE561A1BD8C5003FBC6B /* batStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = batStanding2.png; path = Resources/Images/batStanding2.png; sourceTree = "<group>"; };
+		4242CE591A1BD8EF003FBC6B /* Bat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bat.swift; sourceTree = "<group>"; };
 		4261170A1A09B0970098B840 /* caveWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWall.png; path = Resources/Images/caveWall.png; sourceTree = "<group>"; };
 		4261170D1A09B0970098B840 /* heroStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroStanding1.png; path = Resources/Images/heroStanding1.png; sourceTree = "<group>"; };
 		426117121A09E8A20098B840 /* heroStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heroStanding2.png; path = Resources/Images/heroStanding2.png; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 		426117091A09B07E0098B840 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4242CE551A1BD8C5003FBC6B /* batStanding1.png */,
+				4242CE561A1BD8C5003FBC6B /* batStanding2.png */,
 				42A133EF1A1506AA008E003A /* caveWallDetails.png */,
 				42934DA71A1426B900020502 /* caveCeiling.png */,
 				42C1C44D1A116C6300E31CE5 /* caveFloor.png */,
@@ -133,6 +141,7 @@
 				428910951A0BC4ED00D7381B /* Item.swift */,
 				428910931A0BC42300D7381B /* Hero.swift */,
 				42C1C44F1A11796300E31CE5 /* Thug.swift */,
+				4242CE591A1BD8EF003FBC6B /* Bat.swift */,
 				42C1C44B1A11376F00E31CE5 /* MoveList.swift */,
 				42F59A2919FFF53C00C69F81 /* Main.storyboard */,
 				42F59A2C19FFF53C00C69F81 /* Images.xcassets */,
@@ -251,6 +260,7 @@
 			files = (
 				4289109A1A0BEA6A00D7381B /* heroRunning2.png in Resources */,
 				42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */,
+				4242CE581A1BD8C5003FBC6B /* batStanding2.png in Resources */,
 				428910991A0BEA6A00D7381B /* heroRunning1.png in Resources */,
 				4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */,
 				42934DA81A1426B900020502 /* caveCeiling.png in Resources */,
@@ -262,6 +272,7 @@
 				42F59A2B19FFF53C00C69F81 /* Main.storyboard in Resources */,
 				42A133F01A1506AA008E003A /* caveWallDetails.png in Resources */,
 				42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */,
+				4242CE571A1BD8C5003FBC6B /* batStanding1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +297,7 @@
 				42F59A2219FFF53C00C69F81 /* AppDelegate.swift in Sources */,
 				42C1C4501A11796300E31CE5 /* Thug.swift in Sources */,
 				428910961A0BC4ED00D7381B /* Item.swift in Sources */,
+				4242CE5A1A1BD8EF003FBC6B /* Bat.swift in Sources */,
 				428910921A0AB70700D7381B /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

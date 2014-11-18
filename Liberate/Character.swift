@@ -25,7 +25,30 @@ class Character
 	var stats: [String : Int]
 	var health: Int
 	
+	let healthLabel = SKLabelNode(fontNamed: "OpenSans-Bold")
+	
 	var moveList: MoveList
+	
+//	init()
+//	{
+//		self.currently = "nothing"
+//		self.moveList = MoveList()
+//		
+//		sprite = SKSpriteNode()
+//		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
+//		self.standing1 = ""
+//		self.standing2 = ""
+//		
+//		self.inventory = []
+//		self.stats = [
+//			"health" : 20,
+//			"attack" : 5,
+//			"defense": 5
+//		]
+//		
+//		self.health = self.stats["health"]!
+//	}
+	
 	/**
 		Sets up the character.
 	
@@ -173,5 +196,24 @@ class Character
 		default:
 			break
 		}
+	}
+	
+	func toString() -> String
+	{
+		var characterString: String = ""
+		
+		characterString += "Health: \(health)\n"
+		var attack: Int = stats["attack"]!
+		characterString += "Attack: \(attack)\n"
+		var defense: Int = stats["defense"]!
+		characterString += "Defense: \(defense)\n"
+		
+		
+//		for (key, value) in stats
+//		{
+//			characterString += key + ": " + String(value)
+//		}
+		
+		return characterString
 	}
 }
