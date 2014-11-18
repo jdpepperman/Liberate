@@ -38,8 +38,7 @@ class GameViewController: UIViewController
 	
 	@IBAction func didTap(sender: UITapGestureRecognizer)
 	{
-		println("Tap Recieved")
-		//scene.advance()
+		scene.tap()
 	}
 	
 	
@@ -47,27 +46,18 @@ class GameViewController: UIViewController
 	//	3 --+-- 1
 	//		2
 	@IBAction func swipeUp(sender: UISwipeGestureRecognizer) {
-		println("Swipe Up Recieved")
-		if scene.gameState == "battling" { hero.doMove(0) }
+		scene.swipeUp()
 	}
 	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-		println("Swipe Right Recieved")
-		if scene.gameState == "battling"
-		{
-			hero.doMove(1)
-			enemy.health -= 5
-			println(enemy.health)
-		}
+		scene.swipeRight()
 	}
 	
 	@IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
-		println("Swipe Down Recieved")
-		if scene.gameState == "battling" { hero.doMove(2) }
+		scene.swipeDown()
 	}
 	
 	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
-		println("Swipe Left Recieved")
-		if scene.gameState == "battling" { hero.doMove(3) }
+		scene.swipeLeft()
 	}
 }

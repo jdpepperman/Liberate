@@ -327,8 +327,42 @@ class GameScene: SKScene
 	private func startGame()
 	{
 		hero.stand()
-		//enemy.stand()
 		
+	}
+	
+	func tap()
+	{
+		println("Tap Recieved")
+	}
+	
+	func swipeUp()
+	{
+		println("Swipe Up Recieved")
+		if gameState == "battling" { hero.doMove(0) }
+	}
+	
+	func swipeRight()
+	{
+		println("Swipe Right Recieved")
+		if gameState == "battling"
+		{
+			hero.doMove(1)
+			enemy.health -= 5
+			println(enemy.health)
+		}
+
+	}
+	
+	func swipeDown()
+	{
+		println("Swipe Down Recieved")
+		if gameState == "battling" { hero.doMove(2) }
+	}
+	
+	func swipeLeft()
+	{
+		println("Swipe Left Recieved")
+		if gameState == "battling" { hero.doMove(3) }
 	}
 	
 	private func runGame()

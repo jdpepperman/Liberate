@@ -25,7 +25,7 @@ class MoveList
 	/**
 		Sets up MoveList by adding all available moves to the list.
 	*/
-	init(character: Character)
+	init(attacker: Character)
 	{
 		//blank
 		func blank(){ }
@@ -37,8 +37,8 @@ class MoveList
 			var punchActionForward = SKAction.moveByX(travelDist, y: 0, duration: 0.1)
 			var punchActionBackward = SKAction.moveByX(-travelDist, y: 0, duration: 0.2)
 			
-			character.sprite.runAction(punchActionForward)
-			character.sprite.runAction(punchActionBackward)
+			attacker.sprite.runAction(punchActionForward)
+			attacker.sprite.runAction(punchActionBackward)
 			
 		}
 		self.moveList.updateValue(Move(name: "punch", power: 5, description: "Attacks the foe with fists.", animation: punchAnimation), forKey: "punch")
@@ -49,8 +49,8 @@ class MoveList
 			var kickActionForward = SKAction.moveByX(travelDist, y: 50, duration: 0.1)
 			var kickActionBackward = SKAction.moveByX(-travelDist, y: -50, duration: 0.2)
 			
-			character.sprite.runAction(kickActionForward)
-			character.sprite.runAction(kickActionBackward)
+			attacker.sprite.runAction(kickActionForward)
+			attacker.sprite.runAction(kickActionBackward)
 		}
 		self.moveList.updateValue(Move(name: "kick", power: 7, description: "Attacks the foe with feet.", animation: kickAnimation), forKey: "kick")
 	}

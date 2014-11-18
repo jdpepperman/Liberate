@@ -54,7 +54,7 @@ class Character
 	
 	private func setUpMoves()
 	{
-		self.moveList = MoveList(character: self)
+		self.moveList = MoveList(attacker: self)
 		moveSet.append(moveList.getMove("blank"))
 		moveSet.append(moveList.getMove("punch"))
 		moveSet.append(moveList.getMove("blank"))
