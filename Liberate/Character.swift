@@ -34,8 +34,6 @@ class Character: SKSpriteNode
 		self.currently = "nothing"
 		self.moveList = MoveList()
 		
-		//sprite = SKSpriteNode()
-		
 		self.standing1 = ""
 		self.standing2 = ""
 		
@@ -112,7 +110,8 @@ class Character: SKSpriteNode
 		
 		self.health = self.stats["health"]!
 		
-		super.init()
+		let texture = SKTexture(imageNamed: standing1)
+		super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -218,12 +217,6 @@ class Character: SKSpriteNode
 		characterString += "Attack: \(attack)\n"
 		var defense: Int = stats["defense"]!
 		characterString += "Defense: \(defense)\n"
-		
-		
-//		for (key, value) in stats
-//		{
-//			characterString += key + ": " + String(value)
-//		}
 		
 		return characterString
 	}

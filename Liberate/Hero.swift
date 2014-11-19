@@ -19,7 +19,6 @@ class Hero: Character
 	{
 		super.init(standing1: "heroStanding1", standing2: "heroStanding2")
 		
-		//sprite = SKSpriteNode(imageNamed: standing1)
 		self.position = CGPoint(x: 160, y: -176)
 		self.setScale(1.5)
 	}

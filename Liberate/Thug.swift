@@ -17,7 +17,6 @@ class Thug: Character
 	{
 		super.init(standing1: "enemyRyanStanding1", standing2: "enemyRyanStanding2")
 		
-		//sprite = SKSpriteNode(imageNamed: standing1)
 		self.position = CGPoint(x:300, y: -176)
 		self.setScale(1.5)
 	}
@@ -38,7 +37,6 @@ class Thug: Character
 	
 	func die()
 	{
-		//sprite.scene?.removeChildrenInArray([Thug()])
 		self.removeFromParent()
 	}
 }
