@@ -19,9 +19,13 @@ class Hero: Character
 	{
 		super.init(standing1: "heroStanding1", standing2: "heroStanding2")
 		
-		sprite = SKSpriteNode(imageNamed: standing1)
-		sprite.position = CGPoint(x: 160, y: -176)
-		sprite.setScale(1.5)
+		//sprite = SKSpriteNode(imageNamed: standing1)
+		self.position = CGPoint(x: 160, y: -176)
+		self.setScale(1.5)
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
 	}
 	
 	/**
@@ -41,7 +45,7 @@ class Hero: Character
 		
 		let run = SKAction.repeatAction(heroRunAnimation, count: repitions)
 		
-		sprite.runAction(run, withKey: "running")
+		self.runAction(run, withKey: "running")
 	}
 	
 	/**
@@ -49,6 +53,6 @@ class Hero: Character
 	*/
 	func load()
 	{
-		sprite.position = CGPoint(x: sprite.scene!.size.width / 3, y: -(sprite.scene!.size.height / 3)*2)
+		self.position = CGPoint(x: self.scene!.size.width / 3, y: -(self.scene!.size.height / 3)*2)
 	}
 }

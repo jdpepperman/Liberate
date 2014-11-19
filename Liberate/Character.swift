@@ -12,11 +12,10 @@ import SpriteKit
 	This class defines a Character. There should be no plain characters in the game, as this will just give the Hero and the
 	enemies some basic things that they all need.
 */
-class Character
+class Character: SKSpriteNode
 {
 	var currently: String
 	
-	var sprite: SKSpriteNode
 	var standing1: String
 	var standing2: String
 	
@@ -29,25 +28,28 @@ class Character
 	
 	var moveList: MoveList
 	
-//	init()
-//	{
-//		self.currently = "nothing"
-//		self.moveList = MoveList()
-//		
-//		sprite = SKSpriteNode()
-//		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
-//		self.standing1 = ""
-//		self.standing2 = ""
-//		
-//		self.inventory = []
-//		self.stats = [
-//			"health" : 20,
-//			"attack" : 5,
-//			"defense": 5
-//		]
-//		
-//		self.health = self.stats["health"]!
-//	}
+	init(imageNamed: String)
+	{
+		
+		self.currently = "nothing"
+		self.moveList = MoveList()
+		
+		//sprite = SKSpriteNode()
+		
+		self.standing1 = ""
+		self.standing2 = ""
+		
+		self.inventory = []
+		self.stats = [
+			"health" : 20,
+			"attack" : 5,
+			"defense": 5
+		]
+		
+		self.health = self.stats["health"]!
+		super.init()
+		self.anchorPoint = CGPoint(x: 0.5, y: 0)
+	}
 	
 	/**
 		Sets up the character.
@@ -60,8 +62,7 @@ class Character
 		self.currently = "nothing"
 		self.moveList = MoveList()
 		
-		sprite = SKSpriteNode()
-		sprite.anchorPoint = CGPoint(x: 0.5, y: 0)
+		
 		self.standing1 = standing1
 		self.standing2 = standing2
 		
@@ -73,6 +74,11 @@ class Character
 		]
 		
 		self.health = self.stats["health"]!
+		
+		let texture = SKTexture(imageNamed: standing1)
+		super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+		
+		self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
 	}
 	
 	private func setUpMoves()
@@ -96,7 +102,6 @@ class Character
 	{
 		self.currently = "nothing"
 		
-		sprite = SKSpriteNode()
 		self.standing1 = standing1
 		self.standing2 = standing2
 
@@ -106,6 +111,12 @@ class Character
 		self.moveList = MoveList()
 		
 		self.health = self.stats["health"]!
+		
+		super.init()
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
 	}
 	
 	/**
@@ -120,7 +131,7 @@ class Character
 		
 		let stand = SKAction.repeatActionForever(standAnimation)
 		
-		sprite.runAction(stand, withKey: "standing")
+		self.runAction(stand, withKey: "standing")
 		
 		self.currently = "standing"
 		
@@ -134,7 +145,7 @@ class Character
 	*/
 	func getPosition() -> CGPoint
 	{
-		return sprite.position
+		return self.position
 	}
 	
 	/**

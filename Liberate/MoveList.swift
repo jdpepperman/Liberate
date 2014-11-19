@@ -37,8 +37,8 @@ class MoveList
 			var punchActionForward = SKAction.moveByX(travelDist, y: 0, duration: 0.1)
 			var punchActionBackward = SKAction.moveByX(-travelDist, y: 0, duration: 0.2)
 			
-			attacker.sprite.runAction(punchActionForward)
-			attacker.sprite.runAction(punchActionBackward)
+			attacker.runAction(punchActionForward)
+			attacker.runAction(punchActionBackward)
 			
 		}
 		self.moveList.updateValue(Move(name: "punch", power: 5, description: "Attacks the foe with fists.", animation: punchAnimation), forKey: "punch")
@@ -49,8 +49,8 @@ class MoveList
 			var kickActionForward = SKAction.moveByX(travelDist, y: 50, duration: 0.1)
 			var kickActionBackward = SKAction.moveByX(-travelDist, y: -50, duration: 0.2)
 			
-			attacker.sprite.runAction(kickActionForward)
-			attacker.sprite.runAction(kickActionBackward)
+			attacker.runAction(kickActionForward)
+			attacker.runAction(kickActionBackward)
 		}
 		self.moveList.updateValue(Move(name: "kick", power: 7, description: "Attacks the foe with feet.", animation: kickAnimation), forKey: "kick")
 	}

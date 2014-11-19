@@ -17,9 +17,13 @@ class Thug: Character
 	{
 		super.init(standing1: "enemyRyanStanding1", standing2: "enemyRyanStanding2")
 		
-		sprite = SKSpriteNode(imageNamed: standing1)
-		sprite.position = CGPoint(x:300, y: -176)
-		sprite.setScale(1.5)
+		//sprite = SKSpriteNode(imageNamed: standing1)
+		self.position = CGPoint(x:300, y: -176)
+		self.setScale(1.5)
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
 	}
 	
 	/**
@@ -29,12 +33,12 @@ class Thug: Character
 	*/
 	func load(position: CGPoint)
 	{
-		sprite.position = position
+		self.position = position
 	}
 	
 	func die()
 	{
 		//sprite.scene?.removeChildrenInArray([Thug()])
-		sprite.removeFromParent()
+		self.removeFromParent()
 	}
 }

@@ -206,7 +206,7 @@ class GameScene: SKScene
 	*/
 	private func loadHero()
 	{
-		addChild(hero.sprite)
+		addChild(hero)
 		hero.load()
 		//setUpHeroStatsLabels()
 	}
@@ -216,7 +216,7 @@ class GameScene: SKScene
 	*/
 	private func loadEnemy()
 	{
-		addChild(enemy.sprite)
+		addChild(enemy)
 		enemy.load(enemyStartCoordinate)
 		enemy.stand()
 		//setUpEnemyStatsLabels()
@@ -254,7 +254,7 @@ class GameScene: SKScene
 			sprite.runAction(moveWallAction)
 		}
 		
-		enemy.sprite.runAction(moveEnemyAction)
+		enemy.runAction(moveEnemyAction)
 	}
 	
 	/**
@@ -456,13 +456,13 @@ class GameScene: SKScene
 	
 	private func runGame()
 	{
-		if (floor(enemy.sprite.position.x)) != floor(enemyStopCoordinate.x) && (gameState != "advancing")
+		if (floor(enemy.position.x)) != floor(enemyStopCoordinate.x) && (gameState != "advancing")
 		{
 			gameState = "advancing"
 			println(gameState)
 			advance()
 		}
-		if floor(enemy.sprite.position.x) == floor(enemyStopCoordinate.x) && gameState != "battling"
+		if floor(enemy.position.x) == floor(enemyStopCoordinate.x) && gameState != "battling"
 		{
 			gameState = "battling"
 			println(gameState)
