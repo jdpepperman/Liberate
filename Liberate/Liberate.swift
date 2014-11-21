@@ -8,5 +8,11 @@
 
 class Liberate
 {
+	var enemy: Enemy?
+	var hero: Hero!
 	
+	init()
+	{
+		
+	}
 }

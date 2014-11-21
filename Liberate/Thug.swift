@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Thug: Character
+class Thug: Enemy
 {
 	/**
 		Creates the Thug and places him on the screen.

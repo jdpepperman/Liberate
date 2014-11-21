@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Bat: Character
+class Bat: Enemy
 {
 	/**
 	Creates the Thug and places him on the screen.
