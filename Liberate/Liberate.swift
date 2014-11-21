@@ -6,3 +6,7 @@
 //  Copyright (c) 2014 Joshua Pepperman. All rights reserved.
 //
 
+class Liberate
+{
+	
+}
