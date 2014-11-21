@@ -21,6 +21,7 @@
 		4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */; };
 		4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */; };
 		42934DA81A1426B900020502 /* caveCeiling.png in Resources */ = {isa = PBXBuildFile; fileRef = 42934DA71A1426B900020502 /* caveCeiling.png */; };
+		429DCF031A1FC4FF006D13EA /* Liberate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DCF021A1FC4FF006D13EA /* Liberate.swift */; };
 		42A133F01A1506AA008E003A /* caveWallDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A133EF1A1506AA008E003A /* caveWallDetails.png */; };
 		42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C1C44B1A11376F00E31CE5 /* MoveList.swift */; };
 		42C1C44E1A116C6300E31CE5 /* caveFloor.png in Resources */ = {isa = PBXBuildFile; fileRef = 42C1C44D1A116C6300E31CE5 /* caveFloor.png */; };
@@ -32,6 +33,7 @@
 		42F59A2D19FFF53C00C69F81 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F59A2C19FFF53C00C69F81 /* Images.xcassets */; };
 		42F59A3019FFF53C00C69F81 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F59A2E19FFF53C00C69F81 /* LaunchScreen.xib */; };
 		42F59A3C19FFF53C00C69F81 /* LiberateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F59A3B19FFF53C00C69F81 /* LiberateTests.swift */; };
+		42FAB5701A1E5C4200CFC3F8 /* statsBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 42FAB56F1A1E5C4200CFC3F8 /* statsBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,7 @@
 		4289109B1A0C075F00D7381B /* enemyRyanStanding1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding1.png; path = Resources/Images/enemyRyanStanding1.png; sourceTree = "<group>"; };
 		4289109C1A0C075F00D7381B /* enemyRyanStanding2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemyRyanStanding2.png; path = Resources/Images/enemyRyanStanding2.png; sourceTree = "<group>"; };
 		42934DA71A1426B900020502 /* caveCeiling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveCeiling.png; path = Resources/Images/caveCeiling.png; sourceTree = "<group>"; };
+		429DCF021A1FC4FF006D13EA /* Liberate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liberate.swift; sourceTree = "<group>"; };
 		42A133EF1A1506AA008E003A /* caveWallDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveWallDetails.png; path = Resources/Images/caveWallDetails.png; sourceTree = "<group>"; };
 		42C1C44B1A11376F00E31CE5 /* MoveList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveList.swift; sourceTree = "<group>"; };
 		42C1C44D1A116C6300E31CE5 /* caveFloor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caveFloor.png; path = Resources/Images/caveFloor.png; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		42F59A3519FFF53C00C69F81 /* LiberateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiberateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F59A3A19FFF53C00C69F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42F59A3B19FFF53C00C69F81 /* LiberateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiberateTests.swift; sourceTree = "<group>"; };
+		42FAB56F1A1E5C4200CFC3F8 /* statsBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statsBackground.png; path = Resources/Images/statsBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		426117091A09B07E0098B840 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				42FAB56F1A1E5C4200CFC3F8 /* statsBackground.png */,
 				4242CE551A1BD8C5003FBC6B /* batStanding1.png */,
 				4242CE561A1BD8C5003FBC6B /* batStanding2.png */,
 				42A133EF1A1506AA008E003A /* caveWallDetails.png */,
@@ -137,6 +142,7 @@
 				42F59A2119FFF53C00C69F81 /* AppDelegate.swift */,
 				42F59A2519FFF53C00C69F81 /* GameScene.swift */,
 				42F59A2719FFF53C00C69F81 /* GameViewController.swift */,
+				429DCF021A1FC4FF006D13EA /* Liberate.swift */,
 				428910911A0AB70700D7381B /* Character.swift */,
 				428910951A0BC4ED00D7381B /* Item.swift */,
 				428910931A0BC42300D7381B /* Hero.swift */,
@@ -263,6 +269,7 @@
 				4242CE581A1BD8C5003FBC6B /* batStanding2.png in Resources */,
 				428910991A0BEA6A00D7381B /* heroRunning1.png in Resources */,
 				4289109D1A0C075F00D7381B /* enemyRyanStanding1.png in Resources */,
+				42FAB5701A1E5C4200CFC3F8 /* statsBackground.png in Resources */,
 				42934DA81A1426B900020502 /* caveCeiling.png in Resources */,
 				426117131A09E8A20098B840 /* heroStanding2.png in Resources */,
 				4289109E1A0C075F00D7381B /* enemyRyanStanding2.png in Resources */,
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428910941A0BC42300D7381B /* Hero.swift in Sources */,
+				429DCF031A1FC4FF006D13EA /* Liberate.swift in Sources */,
 				42F59A2619FFF53C00C69F81 /* GameScene.swift in Sources */,
 				42C1C44C1A11376F00E31CE5 /* MoveList.swift in Sources */,
 				42F59A2819FFF53C00C69F81 /* GameViewController.swift in Sources */,

@@ -51,6 +51,7 @@ class GameViewController: UIViewController
 	
 	@IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
 		scene.swipeRight()
+		updateLabels()
 	}
 	
 	@IBAction func swipeDown(sender: UISwipeGestureRecognizer) {
@@ -60,4 +61,22 @@ class GameViewController: UIViewController
 	@IBAction func swipeLeft(sender: UISwipeGestureRecognizer) {
 		scene.swipeLeft()
 	}
+	
+	func updateLabels()
+	{
+		heroHealthLabel.text = "\(hero.health)"
+		heroAttackLabel.text = String(hero.stats["attack"]!)
+		heroDefenseLabel.text = String(hero.stats["defense"]!)
+		
+		enemyHealthLabel.text = "\(enemy.health)"
+		enemyAttackLabel.text = String(enemy.stats["attack"]!)
+		enemyDefenseLabel.text = String(enemy.stats["defense"]!)
+	}
+	
+	@IBOutlet weak var heroHealthLabel: UILabel!
+	@IBOutlet weak var heroAttackLabel: UILabel!
+	@IBOutlet weak var heroDefenseLabel: UILabel!
+	@IBOutlet weak var enemyHealthLabel: UILabel!
+	@IBOutlet weak var enemyAttackLabel: UILabel!
+	@IBOutlet weak var enemyDefenseLabel: UILabel!
 }
