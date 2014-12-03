@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>408F7994-7F9A-4440-8CE4-030929598AFB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Liberate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DCBC29FB359D1EC4C86E3B3C7033AEC99FB890CB</key>
+		<string>https://github.com/jdpepperman/Liberate.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Liberate.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DCBC29FB359D1EC4C86E3B3C7033AEC99FB890CB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jdpepperman/Liberate.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DCBC29FB359D1EC4C86E3B3C7033AEC99FB890CB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DCBC29FB359D1EC4C86E3B3C7033AEC99FB890CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Liberate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

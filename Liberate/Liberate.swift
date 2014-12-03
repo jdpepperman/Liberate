@@ -6,10 +6,17 @@
 //  Copyright (c) 2014 Joshua Pepperman. All rights reserved.
 //
 
+protocol LiberateDelegate
+{
+	func gameDidBegin(liberate: Liberate)
+}
+
 class Liberate
 {
 	var enemy: Enemy?
 	var hero: Hero!
+	
+	var delegate: LiberateDelegate?
 	
 	init()
 	{
